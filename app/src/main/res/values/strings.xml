@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">PhyHelp</string>
+    <string name="app_name">PsyHelp</string>
     <string name="register_by_google">Регистрация через Google</string>
     <string name="psychhosetext">Выберите специалиста, кому вы хотите отправить свое обращение или с кем вы хотите провести консультацию:</string>
+    <string name="musictext">Здесь вы можете послушать раслаблющую музыку и посмотреть красивые видео</string>
+    <string name="след">Следующий</string>
+    <string name="last">Предыдущий</string>
+    <string name="back">Обратно</string>
 </resources>

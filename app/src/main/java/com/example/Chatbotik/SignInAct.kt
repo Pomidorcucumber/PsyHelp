@@ -32,6 +32,7 @@ class SignInAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar!!.hide()
         startAutoTypeText()
         auth = Firebase.auth
         launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
@@ -52,8 +53,7 @@ class SignInAct : AppCompatActivity() {
     }
 
     private fun getClient(): GoogleSignInClient {
-        val gso = GoogleSignInOptions
-            .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
