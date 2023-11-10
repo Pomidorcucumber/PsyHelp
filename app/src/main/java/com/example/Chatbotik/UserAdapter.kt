@@ -11,12 +11,8 @@ import com.google.firebase.auth.FirebaseAuth
 class UserAdapter : ListAdapter<User, UserAdapter.ItemHolder>(ItemComparator()) {
     lateinit var auth: FirebaseAuth
     class ItemHolder(private val binding: UserListItemBinding) : RecyclerView.ViewHolder(binding.root){
-//        auth = Firebase.auth
-//        val selectedChatId = auth.currentUser?.displayName
         fun bind(user: User) = with(binding){
             message.text = user.message
-//            message.setTextColor(Color.BLACK)
-//            message.setBackgroundColor(Color.YELLOW)
             userName.text = user.name
         }
         companion object{

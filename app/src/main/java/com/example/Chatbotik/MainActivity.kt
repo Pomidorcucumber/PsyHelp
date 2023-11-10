@@ -1,6 +1,7 @@
 package com.example.Chatbotik
 
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.Menu
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.chatbotik.R
 import com.example.chatbotik.databinding.ActivityMainBinding
+import com.example.chatbotik.databinding.UserListItemBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
@@ -96,12 +98,14 @@ class MainActivity : AppCompatActivity() {
     private fun setUpActionBar(){
         val ab = supportActionBar
         Thread{
-            val bMap = Picasso.get().load(auth.currentUser?.photoUrl).get()
-            val dIcon = BitmapDrawable(resources, bMap)
             runOnUiThread {
-                ab?.setDisplayHomeAsUpEnabled(true)
-                ab?.setHomeAsUpIndicator(dIcon)
-                ab?.title = auth.currentUser?.displayName
+                val remakename = when(intent.getStringExtra("name")){
+                    "Общий психолог" -> "общим психологом"
+                    "Психолог по семейным проблемам" -> "семейным психологом"
+                    "Психолог по проблемам на учебе" -> "школьным психологом"
+                    else -> "человеком"
+                }
+                ab?.title = "Чат с $remakename"
             }
         }.start()
 
