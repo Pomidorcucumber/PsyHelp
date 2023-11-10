@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PhyHelp</string>
+    <string name="register_by_google">Регистрация через Google</string>
+    <string name="psychhosetext">Выберите специалиста, кому вы хотите отправить свое обращение или с кем вы хотите провести консультацию:</string>
+</resources>

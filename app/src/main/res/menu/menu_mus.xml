@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/music_bt"
+        android:icon="@android:drawable/ic_lock_silent_mode_off"
+        android:title="Музыка" />
+
+    <item
+        android:id="@+id/exit"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:title="Выход" />
+</menu>

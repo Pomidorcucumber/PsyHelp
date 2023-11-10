@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "116478073667",
+    "firebase_url": "https://chatbotik-4b12a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "chatbotik-4b12a",
+    "storage_bucket": "chatbotik-4b12a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116478073667:android:93c9fba3eaa68df8dfadf6",
+        "android_client_info": {
+          "package_name": "com.example.chatbotik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116478073667-akjr3palntnh97f2uiu0dg548bvlj55f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chatbotik",
+            "certificate_hash": "be8a991c93667c8122b6ee905cca44199f2ae961"
+          }
+        },
+        {
+          "client_id": "116478073667-o0905tf663rpcf3dnfos5ap3p6nns98i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCac6Wyhju1fmKZqnLPVVwEASPcVBFkXrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "116478073667-miodjvulncsth6kgc3qbn8aoqejrtlsj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
