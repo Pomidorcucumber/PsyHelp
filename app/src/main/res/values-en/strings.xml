@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="register_by_google">Registration by Google</string>
+    <string name="след">Next</string>
+    <string name="last">Previos</string>
+    <string name="back">Back</string>
+    <string name="regwithoutgoggle">Registration by email</string>
+    <string name="Name">Name</string>
+    <string name="textreg">Enter your details</string>
+    <string name="surname">Surname</string>
+    <string name="next">Sign in</string>
+    <string name="continues">СONTINUE</string>
+    <string name="english">English</string>
+    <string name="russian">Russian</string>
+    <string name="german_testing">German(Testing)</string>
+    <string name="connect_with_people">Connect with people</string>
+    <string name="boost_my_career">Boost my career</string>
+    <string name="support_my_education">Support my education</string>
+    <string name="prepare_for_travel">Prepare for travel</string>
+    <string name="just_for_fun">Just for fun</string>
+    <string name="other">Other</string>
+    <string name="your_answer">Write your answer</string>
+    <string name="check">Check</string>
+    <string name="text_for_check">Введите текст для проверки</string>
+    <string name="stay_checking">Подождите, идет проверка...</string>
+    <string name="no_errors_found">No errors found</string>
+</resources>

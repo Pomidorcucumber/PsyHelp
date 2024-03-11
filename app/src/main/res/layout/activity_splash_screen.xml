@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_splash_screen_scene"
-    tools:context="com.example.Chatbotik.SplashScreenActivity">
+    tools:context="com.example.chatbotik.com.example.Chatbotik.activity.SplashScreenActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,10 +20,10 @@
 
     <ImageView
         android:id="@+id/iconSph"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/pomosh"
+        android:src="@drawable/enothey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,8 +33,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
+        android:fontFamily="@font/artifika"
         android:text="@string/app_name"
-        android:textSize="60sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="@id/iconSph"
         app:layout_constraintStart_toStartOf="@id/iconSph"
         app:layout_constraintTop_toBottomOf="@id/iconSph" />

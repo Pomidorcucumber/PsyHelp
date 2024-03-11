@@ -12,13 +12,14 @@
         <Constraint
             android:id="@+id/backgroundsplash"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="190dp"
+            android:layout_height="195dp"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             android:scaleX="10"
-            android:scaleY="10" />
+            android:scaleY="10"
+            motion:layout_editor_absoluteY="246dp" />
         <Constraint
             android:id="@+id/iconSph"
             motion:layout_constraintEnd_toEndOf="parent"
@@ -65,15 +66,16 @@
         <Constraint
             android:id="@+id/iconSph"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="266dp"
+            android:layout_height="277dp"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             android:scaleX="1"
             android:scaleY="1"
             android:alpha="1"
-            motion:transitionEasing="cubic(1,0,1,0)" />
+            motion:transitionEasing="cubic(0.27,0.64,1,0)"
+            motion:layout_editor_absoluteY="210dp" />
         <Constraint
             android:id="@+id/textView"
             motion:layout_constraintEnd_toEndOf="@id/iconSph"

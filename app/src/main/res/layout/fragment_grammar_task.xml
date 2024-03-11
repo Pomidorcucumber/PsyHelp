@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Изображение сверху -->
+    <ImageView
+        android:id="@+id/grammarImage"
+        android:layout_width="match_parent"
+        android:layout_height="279dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/situation" />
+
+    <TextView
+        android:id="@+id/grammarDescription"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:padding="15dp"
+        android:text="@string/Name"
+        android:textSize="24sp" />
+
+    <!-- EditText для ввода текста -->
+    <EditText
+        android:id="@+id/grammarEditText"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:hint="@string/your_answer"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:background="@color/material_dynamic_neutral_variant70"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="@string/textview"
+        android:textSize="28sp"
+        android:visibility="visible"
+        app:drawableStartCompat="@drawable/bad" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:background="@color/material_dynamic_neutral_variant70"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="@string/textview"
+        android:textSize="24sp"
+        android:visibility="visible" />
+
+</LinearLayout>
+
