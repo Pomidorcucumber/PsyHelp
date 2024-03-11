@@ -22,19 +22,19 @@
             android:name="com.example.Chatbotik.activity.TaskActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.chatbotik.com.example.Chatbotik.activity.Meeting"
+            android:name="com.example.Chatbotik.activity.Meeting"
             android:exported="false" />
         <activity
-            android:name="com.example.chatbotik.com.example.Chatbotik.activity.Registerr"
+            android:name="com.example.Chatbotik.activity.Registerr"
             android:exported="false" />
         <activity
-            android:name="com.example.chatbotik.com.example.Chatbotik.activity.SignInAct"
+            android:name="com.example.Chatbotik.activity.SignInAct"
             android:exported="false" />
         <activity
-            android:name="com.example.chatbotik.com.example.Chatbotik.activity.MainScreen"
+            android:name="com.example.Chatbotik.activity.MainScreen"
             android:exported="false" />
         <activity
-            android:name="com.example.chatbotik.com.example.Chatbotik.activity.SplashScreenActivity"
+            android:name="com.example.Chatbotik.activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +42,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.chatbotik.com.example.Chatbotik.activity.MainActivity" />
+        <activity android:name="com.example.Chatbotik.activity.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
