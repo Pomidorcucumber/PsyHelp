@@ -35,17 +35,13 @@ class MainScreen : AppCompatActivity() {
         }
         binding.button.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-
             intent.putExtra("name", binding.button.text)
-
             startActivity(intent)
             finish()
         }
         binding.button3.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-
             intent.putExtra("name", binding.button3.text)
-
             startActivity(intent)
             finish()
         }

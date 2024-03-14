@@ -35,9 +35,10 @@
     <string name="text_for_check">Введите текст для проверки</string>
     <string name="stay_checking">Подождите, идет проверка...</string>
     <string name="no_errors_found">No errors found</string>
-   <string-array name="first_meeting_task">
-       <item>1</item>
-       <item>2</item>
-       <item>4</item>
-   </string-array>
+    <string name="_29_online">29 online</string>
+    <string-array name="first_meeting_task">
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+    </string-array>
 </resources>
