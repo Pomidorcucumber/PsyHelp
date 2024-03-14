@@ -35,8 +35,8 @@ class SignInAct : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
         val value = sharedPreferences.getString("reg", "Not idea")
         val valmeet = sharedPreferences.getString("meet", "Not idea")
-        val intent = Intent(this, if (valmeet == "yes"){ if (value == "yes") TaskActivity::class.java else TODO()
-        } else if (value == "yes") Meeting::class.java else TODO())
+        val intent = Intent(this, if (valmeet == "yes"){ if (value == "yes") ChooseTaskActivity::class.java else SignInAct::class.java
+        } else if (value == "yes") Meeting::class.java else SignInAct::class.java)
         startActivity(intent)
         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
             if(!task.isComplete){
