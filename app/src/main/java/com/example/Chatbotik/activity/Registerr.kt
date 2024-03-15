@@ -1,5 +1,6 @@
 package com.example.Chatbotik.activity
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -21,7 +22,7 @@ class Registerr : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar!!.hide()
         binding.imageView2.setOnClickListener {
-            val i = Intent(this, SignInAct::class.java)
+            val i = Intent(this, SignInAct::class.java)// добавить удаление value
             startActivity(i)
         }
 
@@ -54,6 +55,7 @@ class Registerr : AppCompatActivity() {
     private val textWatcher: TextWatcher = object : TextWatcher {
         override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
         override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
+        @SuppressLint("ResourceAsColor")
         override fun afterTextChanged(editable: Editable) {
             val areBothFilled =
                 binding.editTextText.text.isNotEmpty() && binding.editTextText2.text

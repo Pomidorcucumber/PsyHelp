@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.Chatbotik.fragments.mainScreen.ChatFragment
-import com.example.Chatbotik.fragments.mainScreen.PodcastsFragment
+import com.example.Chatbotik.fragments.mainScreen.movie_podcasts.PodcastsFragment
 import com.example.Chatbotik.fragments.mainScreen.SettingsFragment
-import com.example.Chatbotik.fragments.mainScreen.TasksFragment
+import com.example.Chatbotik.fragments.mainScreen.tasks_chosses.TasksFragment
 import com.example.chatbotik.R
 import com.example.chatbotik.databinding.ActivityChooseTaskBinding
 

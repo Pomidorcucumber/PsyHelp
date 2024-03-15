@@ -326,7 +326,7 @@ class Meeting : AppCompatActivity() {
                                 "Hooray! Fun is my forte!"
 
                             getString(R.string.other) -> binding.textView7.text =
-                                "Any reason is a good reason to learn!"
+                                "Any reason is a good\nreason to learn!"
 
                             getString(R.string.prepare_for_travel) -> binding.textView7.text =
                                 "This is the best way\n to prepare for future travels!"

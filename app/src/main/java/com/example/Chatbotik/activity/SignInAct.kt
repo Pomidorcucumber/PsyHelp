@@ -96,14 +96,12 @@ class SignInAct : AppCompatActivity() {
     }
 
     private fun checkAuthState(){
-        val sharedPreferences =
-            getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString("reg", "yes")
-        editor.apply()
         if(auth.currentUser != null){
             val sharedPreferences =
                 getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putString("reg", "yes")
+            editor.apply()
             val  retrievedText =
             sharedPreferences.getString("meet", "Нет сохраненного текста")
             val i = Intent(this, if(retrievedText == "yes") TaskActivity::class.java else Meeting::class.java)
