@@ -7,19 +7,22 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.Chatbotik.activity.TaskActivity
+import com.example.Chatbotik.fragments.typesTasksData.DictionaryTaskData
+import com.example.Chatbotik.fragments.typesTasksData.GrammarTaskData
 import com.example.chatbotik.R
 import com.example.chatbotik.databinding.FragmentGrammarTaskBinding
 
 class GrammarTaskFragment : Fragment() {
     private lateinit var binding: FragmentGrammarTaskBinding
-    private val tasksList = listOf(Pair(Pair("I (to do) morning exercises.","do"), R.drawable.situation), Pair(Pair("She (to sleep) after dinner.","sleeps"), R.drawable.situation), Pair(Pair("They (to drink) tea every day.","drink"), R.drawable.situation))
-
+    private lateinit var grammarTaskData: GrammarTaskData
     private var currentIndex = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        grammarTaskData = requireArguments().getParcelable("task_data")!!
+        val tasksList = grammarTaskData.task
         binding = FragmentGrammarTaskBinding.inflate(inflater, container, false)
         binding.textView8.visibility= View.INVISIBLE
         binding.textView9.visibility= View.INVISIBLE
@@ -31,6 +34,7 @@ class GrammarTaskFragment : Fragment() {
     }
 
     fun incrementIndex() {
+        val tasksList = grammarTaskData.task
         binding.grammarEditText.text.clear()
         currentIndex++
         binding.textView8.visibility= View.INVISIBLE
@@ -47,6 +51,7 @@ class GrammarTaskFragment : Fragment() {
     }
 
     fun checkAnswer() {
+        val tasksList = grammarTaskData.task
         val userAnswer = binding.grammarEditText.text.toString()
         if (isAnswerCorrect(userAnswer)) {
             binding.textView9.text = "Great job"
@@ -66,6 +71,7 @@ class GrammarTaskFragment : Fragment() {
     }
 
     private fun isAnswerCorrect(answer: String): Boolean {
+        val tasksList = grammarTaskData.task
         val correctAnswer = tasksList[currentIndex].first.second
         return answer.equals(correctAnswer, ignoreCase = true)
     }

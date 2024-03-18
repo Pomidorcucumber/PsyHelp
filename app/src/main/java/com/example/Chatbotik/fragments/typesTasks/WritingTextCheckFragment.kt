@@ -5,11 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.Chatbotik.activity.TaskActivity
+import com.example.Chatbotik.fragments.typesTasksData.WritingTaskData
 import com.example.chatbotik.databinding.FragmentWritingTextCheckBinding
 
 class WritingTextCheckFragment : Fragment() {
     private lateinit var binding: FragmentWritingTextCheckBinding
-    private val topics = listOf("Семья")
+    private lateinit var writingTaskData: WritingTaskData
     private var currentIndex = 0
 
     override fun onCreateView(
@@ -19,8 +20,10 @@ class WritingTextCheckFragment : Fragment() {
     ): View {
         binding = FragmentWritingTextCheckBinding.inflate(inflater, container, false)
         val view = binding.root
+        writingTaskData = requireArguments().getParcelable("task_data")!!
+        val tasksList = writingTaskData.task
         binding.textView11.visibility = View.INVISIBLE
-        binding.textView12.text = topics[currentIndex]
+        binding.textView12.text = tasksList[currentIndex]
         return view
     }
 
@@ -35,10 +38,11 @@ class WritingTextCheckFragment : Fragment() {
     }
 
     fun incrementIndex() {
+        val tasksList = writingTaskData.task
         binding.textView11.visibility = View.INVISIBLE
         currentIndex++
-        if (currentIndex < topics.size) {
-            binding.textView12.text = topics[currentIndex]
+        if (currentIndex < tasksList.size) {
+            binding.textView12.text = tasksList[currentIndex]
         } else {
             currentIndex = -1
             val taskActivity = activity as TaskActivity

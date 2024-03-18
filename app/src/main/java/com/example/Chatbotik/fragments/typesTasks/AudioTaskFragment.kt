@@ -9,6 +9,7 @@ import android.widget.CheckBox
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.Chatbotik.activity.TaskActivity
+import com.example.Chatbotik.fragments.typesTasksData.AudioTaskData
 import com.example.chatbotik.R
 import com.example.chatbotik.databinding.FragmentAudioTaskBinding
 
@@ -16,7 +17,7 @@ import com.example.chatbotik.databinding.FragmentAudioTaskBinding
 class AudioTaskFragment : Fragment() {
     private lateinit var binding: FragmentAudioTaskBinding
     private lateinit var mediaPlayer: MediaPlayer
-    private val tasksList = listOf(Pair(R.raw.dog__us_1, Pair("My mother is a...", Pair(listOf("Doctor", "Nurse", "Writer", "Waitress"), "Doctor"))), Pair(R.raw.incredible ,Pair("My house is near the...", Pair(listOf("City", "Monastery", "Mountains", "Italy"), "Italy"))))
+    private lateinit var audioTaskData: AudioTaskData
     private var currentIndex = 0
 
     override fun onCreateView(
@@ -25,6 +26,8 @@ class AudioTaskFragment : Fragment() {
     ): View {
         binding = FragmentAudioTaskBinding.inflate(inflater, container, false)
         val view = binding.root
+        audioTaskData = requireArguments().getParcelable("task_data")!!
+        val tasksList = audioTaskData.task
         binding.textView10.text = tasksList[currentIndex].second.first
         setupQuestions()
 
@@ -45,6 +48,7 @@ class AudioTaskFragment : Fragment() {
     }
 
     private fun setupQuestions() {
+        val tasksList = audioTaskData.task
         val  questions  = tasksList[currentIndex].second.second.first
         for (question in questions) {
             val checkBox = CheckBox(requireContext())
@@ -53,6 +57,7 @@ class AudioTaskFragment : Fragment() {
         }
     }
     fun checkAnswers() {
+        val tasksList = audioTaskData.task
         val selectedAnswer = getSelectedAnswer()
         val correctAnswer = tasksList[currentIndex].second.second.second
 
@@ -81,6 +86,7 @@ class AudioTaskFragment : Fragment() {
         return ""
     }
     fun incrementIndex() {
+        val tasksList = audioTaskData.task
         binding.questionsContainer.isEnabled = true
         currentIndex++
         if (currentIndex < tasksList.size) {

@@ -8,13 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.Chatbotik.activity.TaskActivity
+import com.example.Chatbotik.fragments.typesTasksData.AudioTaskData
+import com.example.Chatbotik.fragments.typesTasksData.DictionaryTaskData
 import com.example.chatbotik.R
 import com.example.chatbotik.databinding.FragmentDictionaryBinding
 
 class DictionaryFragment : Fragment() {
     lateinit var binding: FragmentDictionaryBinding
-    private val wordsList = listOf(Pair("Dog","Собака"), Pair("Cat", "Кошка"), Pair("House", "Дом"))
-
+    private lateinit var dictionaryTaskData: DictionaryTaskData
     private var currentIndex = 0
     private var firstorsecond = 0
 
@@ -22,6 +23,8 @@ class DictionaryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        dictionaryTaskData = requireArguments().getParcelable("task_data")!!
+        val wordsList = dictionaryTaskData.task
         binding = FragmentDictionaryBinding.inflate(inflater, container, false)
         val view = binding.root
         binding.wordTextView.text = wordsList[currentIndex].first
@@ -34,20 +37,20 @@ class DictionaryFragment : Fragment() {
     }
 
     fun incrementIndex() {
+        val wordsList = dictionaryTaskData.task
         firstorsecond = 0
         currentIndex++
         if (currentIndex < wordsList.size) {
-            binding.wordTextView.text =
-                if (firstorsecond == 0) wordsList[currentIndex].first else wordsList[currentIndex].second
+            binding.wordTextView.text = wordsList[currentIndex].first
         } else {
             currentIndex = -1
-            // Достигнут конец списка слов, переключаемся на фрагмент GrammarTaskFragment
             val taskActivity = activity as TaskActivity
             taskActivity.switchToNextFragment()
         }
     }
 
     private fun flipCard() {
+        val wordsList = dictionaryTaskData.task
         val rotation = AnimatorInflater.loadAnimator(requireContext(), R.animator.flip)
         rotation.setTarget(binding.cardLayout)
         binding.wordTextView.text = ""
