@@ -1,7 +1,7 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -10,13 +10,15 @@
         android:layout_width="271dp"
         android:layout_height="313dp"
         android:layout_gravity="center"
-        android:background="@drawable/sound_off" />
+        android:background="@drawable/sound_off"
+        android:backgroundTint="@color/white" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/textview"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <RadioGroup

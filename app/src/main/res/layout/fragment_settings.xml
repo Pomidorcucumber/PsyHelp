@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_neutral30"
+    android:background="@drawable/background_choose"
     tools:context="com.example.Chatbotik.fragments.mainScreen.SettingsFragment">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
-        android:text="Настройки"
+        android:text="@string/settings"
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,69 +33,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:text="TextView"
+        android:text="Name Surname"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView12"
         app:layout_constraintStart_toEndOf="@+id/imageView12"
         app:layout_constraintTop_toTopOf="@+id/imageView12" />
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/bad"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-        app:layout_constraintEnd_toEndOf="@+id/textView21"
-        app:layout_constraintStart_toStartOf="@+id/textView21"
-        app:layout_constraintTop_toTopOf="@+id/imageView13" />
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView23"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView23" />
-
     <TextView
         android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
+        android:layout_marginTop="40dp"
+        android:text="@string/Achievment"
         android:textColor="@color/material_dynamic_neutral70"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView13"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
 
-    <Button
-        android:id="@+id/button10"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/achievementsList"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:gravity="start|center_vertical"
-        android:text="Button"
-        android:textSize="20sp"
-        app:icon="@android:drawable/ic_media_play"
-        app:iconGravity="end"
-        app:iconPadding="40dp"
-        app:iconSize="30dp"
-        app:iconTint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/switch1"
-        app:layout_constraintStart_toStartOf="@+id/textView24"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

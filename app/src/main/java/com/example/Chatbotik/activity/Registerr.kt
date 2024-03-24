@@ -22,8 +22,7 @@ class Registerr : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar!!.hide()
         binding.imageView2.setOnClickListener {
-            val i = Intent(this, SignInAct::class.java)// добавить удаление value
-            startActivity(i)
+            finish()
         }
 
             binding.button8.setOnClickListener {

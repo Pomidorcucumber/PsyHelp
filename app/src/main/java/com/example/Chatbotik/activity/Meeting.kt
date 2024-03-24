@@ -30,41 +30,155 @@ class Meeting : AppCompatActivity() {
     private var autoTypeText = "Hi there! I'm Swift!"
     private var delay: Long = 50
     private var timer = Timer()
-    private val audioTaskData = AudioTaskData(4, listOf(Pair(R.raw.dog__us_1, Pair("My mother is a...", Pair(listOf("Doctor", "Nurse", "Writer", "Waitress"), "Doctor"))), Pair(R.raw.incredible ,Pair("My house is near the...", Pair(listOf("City", "Monastery", "Mountains", "Italy"), "Italy")))))
-    private val grammarTaskData = GrammarTaskData(3, listOf(Pair(Pair("I (to do) morning exercises.","do"), R.drawable.situation), Pair(Pair("She (to sleep) after dinner.","sleeps"), R.drawable.situation), Pair(Pair("They (to drink) tea every day.","drink"), R.drawable.situation)))
-   private val wordsList = DictionaryTaskData(1, listOf(Pair("Dog","Собака"), Pair("Cat", "Кошка"), Pair("House", "Дом"), Pair("Girl", "Девочка")))
-    private val theoryTask = GrammarTheoryData(4, listOf(
-        "Что такое Present Simple?\n" +
-                "Это простое настоящее время, обозначающее действие в самом широком смысле этого слова. Одна из самых распространенных и простых форм в английском языке для описания действий.\n" +
-                "Действия могут быть связаны с привычками, хобби, ежедневным событием вроде подъема по утрам или чем-то, что случается регулярно.\n" +
-                "\n" +
-                "Как образуется Present Simple?\n" +
-                "Нет ничего проще, чем поставить глагол в форму Present Simple. Для этого нужно убрать у глагола в инфинитиве частицу «to» и поставить глагол после подлежащего. Это и есть основное правило Present Simple .\n" +
-                "Утверждение:\n" +
-                "I / We / You / They + V\n" +
-                "She / He / It + V + s (es)\n" +
-                "I go to work every day — Я хожу на работу каждый день.\n" +
-                "They usually play tennis every weekend — Они обычно играют в теннис каждые выходные.\n" +
-                "She brings me coffee every morning — Она приносит мне кофе каждое утро.\n" +
-                "It snows in winter — Зимой идет снег.\n" +
-                "ВАЖНО: В Present Simple форма глагола практически всегда совпадает с изначальной. Исключение составляет третье лицо единственного числа (he / she / it) — к нему прибавляется окончание -s:\n" +
-                "I ride — She rides\n" +
-                "I dream — He dreams\n" +
-                "Если глагол оканчивается на -s, -ss, -sh, -ch, -x, -o, то к нему прибавляется окончание -es\n" +
-                "I wish — She wishes\n" +
-                "I teach — She teaches\n" +
-                "Если глагол оканчивается на -y, а ему предшествует согласная, то к нему прибавляется окончание -es, но -y заменяется на -i\n" +
-                "I try — She tries\n" +
-                "I fly — He flies\n" +
-                "Если глагол оканчивается на -y, а ему предшествует гласная, то к нему также прибавляется окончание -s, но -y не меняется.\n" +
-                "I play — She plays\n" +
-                "I stay — He stays\n"
-    ))
-    private val textTask = TextTaskData(1, "My Wonderful Family\n" +
-            "I live in a house near the mountains. I have two brothers and one sister, and I was born last. My father teaches mathematics, and my mother is a nurse at a big hospital. My brothers are very smart and work hard in school. My sister is a nervous girl, but she is very kind. My grandmother also lives with us. She came from Italy when I was two years old. She has grown old, but she is still very strong. She cooks the best food!\n" +
-            "My family is very important to me. We do lots of things together. My brothers and I like to go on long walks in the mountains. My sister likes to cook with my grandmother. On the weekends we all play board games together. We laugh and always have a good time. I love my family very much.\n", listOf(Pair("My mother is a...", Pair(listOf("Doctor", "Nurse", "Writer", "Waitress"), "Doctor")), Pair("My house is near the...", Pair(listOf("City", "Monastery", "Mountains", "Italy"), "Italy")), Pair("", Pair(listOf(""), ""))))
-    private val writingTask = WritingTaskData(6, listOf("Семья"))
+    private val audioTaskData1 = AudioTaskData(
+        4, listOf(
+            Pair(
+                R.raw.dog__us_1, Pair(
+                    "My mother is a...",
+                    Pair(listOf("Doctor", "Nurse", "Writer", "Waitress"), "Doctor")
+                )
+            ), Pair(
+                R.raw.incredible, Pair(
+                    "My house is near the...",
+                    Pair(listOf("City", "Monastery", "Mountains", "Italy"), "Italy")
+                )
+            )
+        )
+    )
 
+    private val audioTaskData2ru = AudioTaskData(
+        4, listOf(
+            Pair(
+                R.raw.earth,
+                Pair(
+                    "Название деревни:",
+                    Pair(listOf("Оймякон", "Целовка", "Долинка", "Минон"), "Оймякон")
+                )
+            ),
+            Pair(
+                R.raw.earth, Pair(
+                    "Какие люди там живут?",
+                    Pair(listOf("Веселые", "Грустные", "Странные", "Молчаливые"), "Веселые")
+                )
+            ), Pair(
+                R.raw.maslenica, Pair(
+                    "В какой день недели катаются на санках?",
+                    Pair(listOf("Вторник", "Понедельник", "Четверг", "Суббота"), "Четверг")
+                )
+            ), Pair(
+                R.raw.banya, Pair(
+                    "Самое главное в бане?",
+                    Pair(listOf("Температура", "Друзья", "Еда", "Веник"), "Веник")
+                )
+            ),
+            Pair(
+                R.raw.banya, Pair(
+                    "Какая вода в бассейне в бане?",
+                    Pair(
+                        listOf(
+                            "Теплая",
+                            "Холодная",
+                            "В бане нет бассейна",
+                            "Нет правильного ответа"
+                        ), "Холодная"
+                    )
+                )
+
+            )
+        )
+    )
+
+    private val grammarTaskDataPresent1 = GrammarTaskData(
+        3, listOf(
+            Pair(Pair("I (to do) morning exercises.", "do"), R.drawable.situation),
+            Pair(Pair("She (to sleep) after dinner.", "sleeps"), R.drawable.situation),
+            Pair(Pair("They (to drink) tea every day.", "drink"), R.drawable.situation),
+            Pair(Pair("He (to work) at a factory.", "works"), R.drawable.situation),
+            Pair(Pair("We (to work) part-time.", "work"), R.drawable.situation)
+        )
+    )
+    private val grammarTaskDataPresent1ru = GrammarTaskData(
+        3, listOf(
+            Pair(Pair("Я (любить) смотреть телевизор.", "люблю"), R.drawable.situation),
+            Pair(Pair("Она (заниматься) спортом.", "занимается"), R.drawable.situation),
+            Pair(Pair("Они (пить) чай каждое утро.", "пьют"), R.drawable.situation),
+            Pair(Pair("Он (работать) на заводе.", "работает"), R.drawable.situation),
+            Pair(Pair("Мы (учиться) в школе.", "учимся"), R.drawable.situation)
+        )
+    )
+    private val wordsList1 = DictionaryTaskData(
+        1, listOf(
+            Pair("Dog", "Собака"),
+            Pair("Cat", "Кошка"),
+            Pair("House", "Дом"),
+            Pair("Girl", "Девочка"),
+            Pair("Аge", "Возраст"),
+            Pair("Explain", "объяснять"),
+            Pair("Key", "ключ")
+        )
+    )
+
+    private val theoryTaskPresent = GrammarTheoryData(
+        4, listOf(
+            "Что такое Present Simple?\n" + "Это простое настоящее время, обозначающее действие в самом широком смысле этого слова. Одна из самых распространенных и простых форм в английском языке для описания действий.\n" + "Действия могут быть связаны с привычками, хобби, ежедневным событием вроде подъема по утрам или чем-то, что случается регулярно.\n" + "\n" + "Как образуется Present Simple?\n" + "Нет ничего проще, чем поставить глагол в форму Present Simple. Для этого нужно убрать у глагола в инфинитиве частицу «to» и поставить глагол после подлежащего. Это и есть основное правило Present Simple .\n" + "Утверждение:\n" + "I / We / You / They + V\n" + "She / He / It + V + s (es)\n" + "I go to work every day — Я хожу на работу каждый день.\n" + "They usually play tennis every weekend — Они обычно играют в теннис каждые выходные.\n" + "She brings me coffee every morning — Она приносит мне кофе каждое утро.\n" + "It snows in winter — Зимой идет снег.\n" + "ВАЖНО: В Present Simple форма глагола практически всегда совпадает с изначальной. Исключение составляет третье лицо единственного числа (he / she / it) — к нему прибавляется окончание -s:\n" + "I ride — She rides\n" + "I dream — He dreams\n" + "Если глагол оканчивается на -s, -ss, -sh, -ch, -x, -o, то к нему прибавляется окончание -es\n" + "I wish — She wishes\n" + "I teach — She teaches\n" + "Если глагол оканчивается на -y, а ему предшествует согласная, то к нему прибавляется окончание -es, но -y заменяется на -i\n" + "I try — She tries\n" + "I fly — He flies\n" + "Если глагол оканчивается на -y, а ему предшествует гласная, то к нему также прибавляется окончание -s, но -y не меняется.\n" + "I play — She plays\n" + "I stay — He stays\n"
+        )
+    )
+    private val theoryTaskPresentru = GrammarTheoryData(
+        4, listOf(
+            "The present tense in Russian refers to actions or states that are happening in the present moment.\n"  + "It is used to talk about routines, habits, general truths, and actions happening at the present time.\n" + "To form the present tense, we typically use verb conjugation, which means that the verb changes its ending depending on the subject of the sentence.\n" +"For example:\n" + "\n" + "Он сейчас спит. – He is sleeping now.\n" + "\n" + "Я все ещё готовлю обед. – I am still cooking lunch.")
+    )
+    private val textTask1 = TextTaskData(
+        1,
+        "First, I wake up. Then, I get dressed. I walk to school. I do not ride a bike. I do not ride the bus. I like to go to school. It rains. I do not like rain. I eat lunch. I eat a sandwich and an apple.\n" + "I play outside. I like to play. I read a book. I like to read books. I walk home. I do not like walking home. My mother cooks soup for dinner. The soup is hot. Then, I go to bed. I do not like to go to bed.\n",
+        listOf(
+            Pair(
+                "What happens first?",
+                Pair(listOf("Wake up", "Eat lunch", "Get dressed", "Walk to school"), "Wake up")
+            ), Pair(
+                "What do I like?",
+                Pair(listOf("Books", "Rain", "Going to bed", "Walking home"), "Books")
+            ), Pair(
+                "How do I go to school?", Pair(
+                    listOf("I walk.", "I drive a car.", "I ride a bike.", "I ride the bus."),
+                    "I walk."
+                )
+            ), Pair(
+                "What do I eat for dinner?",
+                Pair(listOf("Sandwich", "Pie", "Soup", "Apple"), "Soup.")
+            ), Pair(
+                "What do I not like?",
+                Pair(listOf("Soup", "Going to bed", "Playing", "Going to school"), "Going to bed")
+            )
+        )
+    )
+    private val textTask1ru = TextTaskData(
+        1,
+        "К Виталику пришел его друг Сережа. В банке он увидел рыбку. Сережа достал свисток. Виталик за свисток отдал ему рыбку.\n" +
+                "       Дома Сережа радовался. Виталик грустил. Он смотрел на пустую банку. В руках у него был свисток.\n" +
+                "       Но свисток его не радовал.",
+        listOf(
+            Pair(
+                "Как звали друга Виталика?",
+                Pair(listOf("Александр", "Артем", "Сережа", "Антон"), "Сережа")
+            ), Pair(
+                "Кто был в банке?",
+                Pair(listOf("Рыбка", "Таракан", "Муха", "Камень"), "Рыбка")
+            ), Pair(
+                "Что достал Сережа?", Pair(
+                    listOf("Телефон", "Бутылку", "Свисток", "Камень"),
+                    "Свисток"
+                )
+            ), Pair(
+                "Что сделали ребята?",
+                Pair(listOf("Скучали", "Обменялись вещами", "Пошли гулять", "Играли"), "Обменялись вещами")
+            ), Pair(
+                "Из-за чего грустил Виталик?",
+                Pair(listOf("Из-за пустой банки", "Из-за оценок", "Из-за ссоры с родителями", "Из-за песни"), "Из-за пустой банки")
+            )
+        )
+    )
+    private val writingTask1 = WritingTaskData(6, listOf("Семья"))
+    private val writingTask2ru = WritingTaskData(6, listOf("Family"))
 
     @SuppressLint("SetTextI18n", "ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -96,9 +210,17 @@ class Meeting : AppCompatActivity() {
                     binding.textView7.startAnimation(animation)
                     startAutoTypeText()
                     binding.imageView4.setImageResource(R.drawable.enotbighey)
+                    binding.imageView5.setOnClickListener {
+                        val i = Intent(this, SignInAct::class.java)
+                        startActivity(i)
+                    }
                 }
 
                 2 -> {
+                    binding.imageView5.setOnClickListener {
+                        howManyClick -= 2
+                        binding.button9.performClick()
+                    }
                     binding.textView7.visibility = View.INVISIBLE
                     binding.progressBar2.progress = 20
                     binding.progressBar2.visibility = View.VISIBLE
@@ -151,6 +273,10 @@ class Meeting : AppCompatActivity() {
                 }
 
                 3 -> {
+                    binding.imageView5.setOnClickListener {
+                        howManyClick -= 2
+                        binding.button9.performClick()
+                    }
                     if (binding.option1.isChecked || binding.option2.isChecked || binding.option3.isChecked) {
                         binding.radiotapok.visibility = View.INVISIBLE
                         if (binding.option1.isChecked) {
@@ -159,6 +285,7 @@ class Meeting : AppCompatActivity() {
                             val editor = sharedPreferences.edit()
                             editor.putString("language", binding.option1.text.toString())
                             editor.apply()
+                            binding.option1.isChecked = false
                         }
 
                         if (binding.option2.isChecked) {
@@ -167,6 +294,7 @@ class Meeting : AppCompatActivity() {
                             val editor = sharedPreferences.edit()
                             editor.putString("language", binding.option2.text.toString())
                             editor.apply()
+                            binding.option1.isChecked = false
                         }
                         val sharedPreferences =
                             getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
@@ -228,6 +356,10 @@ class Meeting : AppCompatActivity() {
                 }
 
                 4 -> {
+                    binding.imageView5.setOnClickListener {
+                        howManyClick -= 2
+                        binding.button9.performClick()
+                    }
                     if (binding.option1.isChecked || binding.option2.isChecked || binding.option3.isChecked || binding.option.isChecked) {
                         binding.radiotapok.visibility = View.INVISIBLE
                         if (binding.option1.isChecked) {
@@ -284,6 +416,10 @@ class Meeting : AppCompatActivity() {
                 }
 
                 5 -> {
+                    binding.imageView5.setOnClickListener {
+                        howManyClick -= 3
+                        binding.button9.performClick()
+                    }
                     binding.checktapok.visibility = View.VISIBLE
                     val sharedPreferences =
                         getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
@@ -336,6 +472,10 @@ class Meeting : AppCompatActivity() {
                 }
 
                 6 -> {
+                    binding.imageView5.setOnClickListener {
+                        howManyClick -= 2
+                        binding.button9.performClick()
+                    }
                     binding.progressBar2.progress = 80
                     binding.checktapok.visibility = View.GONE
                     val reasons = mutableListOf<String>()
@@ -385,7 +525,12 @@ class Meeting : AppCompatActivity() {
                 }
 
                 7 -> {
+                    binding.imageView5.setOnClickListener {
+                        howManyClick -= 3
+                        binding.button9.performClick()
+                    }
                     howManyClick--
+                    Toast.makeText(this, "Please turn on notification", Toast.LENGTH_SHORT).show()
                     binding.imageView6.visibility = View.VISIBLE
                     timer = Timer()
                     delay = 25
@@ -397,9 +542,14 @@ class Meeting : AppCompatActivity() {
                         howManyClick++
                     }
 
+
                 }
 
                 8 -> {
+                    binding.imageView5.setOnClickListener {
+                        howManyClick -= 2
+                        binding.button9.performClick()
+                    }
                     binding.progressBar2.progress = 100
                     binding.imageView6.visibility = View.GONE
                     timer = Timer()
@@ -414,9 +564,18 @@ class Meeting : AppCompatActivity() {
                     val editor = sharedPreferences.edit()
                     editor.putString("meet", "yes")
                     editor.apply()
+                    val language = sharedPreferences.getString("language", "Нет сохраненного текста")
                     val i = Intent(this, TaskActivity::class.java)
-                    val comlexTask = ComplexTaskData(listOf(1, 2, 3, 4, 5, 6), audioTaskData, wordsList,grammarTaskData , theoryTask, textTask, writingTask)
-                    i.putExtra("complex_task_data", comlexTask)
+                    val complexTask = ComplexTaskData(
+                        listOf(1, 2, 3, 4, 5, 6),
+                        if (language == "English") audioTaskData1 else audioTaskData2ru,
+                        wordsList1,
+                        if (language == "English") grammarTaskDataPresent1 else grammarTaskDataPresent1ru,
+                        if (language == "English") theoryTaskPresent else theoryTaskPresentru,
+                        if (language == "English") textTask1 else textTask1ru,
+                        if (language == "English") writingTask1 else writingTask2ru
+                    )
+                    i.putExtra("complex_task_data", complexTask)
                     startActivity(i)
                 }
 

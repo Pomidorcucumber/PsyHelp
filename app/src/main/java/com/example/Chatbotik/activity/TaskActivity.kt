@@ -161,8 +161,9 @@ class TaskActivity : AppCompatActivity() {
     }
 
     fun switchToNextFragment() {
-        number++
         val complexTaskData = intent.getParcelableExtra<ComplexTaskData>("complex_task_data")
+        binding.progressBar.progress += 100/ complexTaskData!!.listTask.size
+        number++
         if (number < complexTaskData!!.listTask.size) {
             binding.taskTitleTextView.text = when (complexTaskData.listTask[number]) {
                 1 -> "Словарный запас"

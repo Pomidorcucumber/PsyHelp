@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:padding="20dp"
     android:textAlignment="textStart">
 
@@ -40,7 +41,7 @@
         android:layout_alignStart="@+id/editText"
         android:layout_alignEnd="@+id/editText"
         android:gravity="center"
-        android:text= "@string/textview"
+        android:text="@string/textview"
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="@+id/editText"
         app:layout_constraintStart_toStartOf="@+id/editText" />

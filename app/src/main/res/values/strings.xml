@@ -36,6 +36,8 @@
     <string name="stay_checking">Подождите, идет проверка...</string>
     <string name="no_errors_found">No errors found</string>
     <string name="_29_online">29 online</string>
+    <string name="settings">Настройки</string>
+    <string name="Achievment">Достижения</string>
     <string-array name="first_meeting_task">
         <item>1</item>
         <item>2</item>
