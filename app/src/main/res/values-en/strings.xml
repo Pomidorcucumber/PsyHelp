@@ -27,4 +27,12 @@
     <string name="_29_online">29 online</string>
     <string name="settings">Settings</string>
     <string name="Achievment">Achievments</string>
+    <string name="first_connect">First connect</string>
+    <string name="first_time_meet">Launched the application for the first time</string>
+    <string name="linguist_beginner">Linguist Beginner</string>
+    <string name="first_lesson">Take your first lesson</string>
+    <string name="vocabulary_explorer">Vocabulary Explorer</string>
+    <string name="words50_achievment">Reach 50 words in your vocabulary</string>
+    <string name="conversation_starter">Conversation Starter</string>
+    <string name="first_5_messages">Construct your first 5 sentences in a new language in chat</string>
 </resources>

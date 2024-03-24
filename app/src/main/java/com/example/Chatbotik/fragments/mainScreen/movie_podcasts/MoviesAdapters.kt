@@ -1,21 +1,27 @@
 package com.example.Chatbotik.fragments.mainScreen.movie_podcasts
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatbotik.R
 
-class MoviesAdapter(private val movies: List<Movie>) :
+class MoviesAdapter(private val context: Context, private val movies: List<Movie>) :
     RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.movieTitle)
         val imageView: ImageView = itemView.findViewById(R.id.movieImage)
+
         init {
+            val sharedPreferences =
+                context.getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+            val language = sharedPreferences.getString("language", "Нет сохраненного текста")
             itemView.setOnClickListener {
                 val position = bindingAdapterPosition
                 if (position != RecyclerView.NO_POSITION) {
@@ -24,8 +30,12 @@ class MoviesAdapter(private val movies: List<Movie>) :
                         Intent(itemView.context, MovieActivity::class.java).apply {
                             putExtra(
                                 "VIDEO_RES_ID", when (movie.videoUrl) {
-                                    "dog" -> R.raw.dog
-                                    "cat" -> R.raw.cat
+                                    "film1" -> if (language == "English") R.raw.filmen1 else R.raw.filmru1
+                                    "film2" -> if (language == "English") R.raw.filmen2 else R.raw.filmru2
+                                    "film3"-> if (language == "English") R.raw.multfilm_en else R.raw.filmru3
+                                    "podcast1" -> if (language == "English") R.raw.podkast_en1 else R.raw.podcastru1
+                                    "podcast2" -> if (language == "English") R.raw.podkasten2 else R.raw.podcastru2
+                                    "podcast3"-> if (language == "English") R.raw.podcasten3 else R.raw.podcastru3
                                     else -> 0
                                 }
                             )

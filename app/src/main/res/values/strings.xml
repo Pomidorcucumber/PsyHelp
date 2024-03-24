@@ -43,4 +43,12 @@
         <item>2</item>
         <item>4</item>
     </string-array>
+    <string name="first_connect">Первый коннект</string>
+    <string name="first_time_meet">Первый раз запустили приложение</string>
+    <string name="linguist_beginner">Языковой Экспериментатор</string>
+    <string name="first_lesson">Пройдите свой первый урок</string>
+    <string name="vocabulary_explorer">Словесный Путешественник</string>
+    <string name="words50_achievment">Достигните 50 слов в вашем словарном запасе</string>
+    <string name="conversation_starter">Мастер Общения</string>
+    <string name="first_5_messages">Постройте свои первые 5 предложений на новом языке в чате</string>
 </resources>

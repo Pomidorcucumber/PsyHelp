@@ -2,6 +2,7 @@ package com.example.Chatbotik.fragments.typesTasks
 
 import android.animation.Animator
 import android.animation.AnimatorInflater
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +44,12 @@ class DictionaryFragment : Fragment() {
         if (currentIndex < wordsList.size) {
             binding.wordTextView.text = wordsList[currentIndex].first
         } else {
+            val sharedPreferences =
+                requireContext().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+            val value = sharedPreferences.getInt("word_num", 0) + wordsList.size
+            val editor = sharedPreferences.edit()
+            editor.putInt("voc_words", value)
+            editor.apply()
             currentIndex = -1
             val taskActivity = activity as TaskActivity
             taskActivity.switchToNextFragment()

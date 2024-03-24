@@ -39,6 +39,12 @@ class ChatActivity : AppCompatActivity() {
         val database = Firebase.database
         val myRef = database.getReference("messages/$language/$nameSpec")
         binding.bSend.setOnClickListener {
+            val sharedPreferences =
+                getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+            val value = sharedPreferences.getInt("num_message", 0) + 1
+            val editor = sharedPreferences.edit()
+            editor.putInt("num_message", value)
+            editor.apply()
             myRef.child(myRef.push().key ?: "blabla").setValue(User(auth.currentUser?.displayName, binding.edMessage.text.toString()))
             binding.edMessage.setText("")
         }

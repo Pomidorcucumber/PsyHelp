@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
+import com.example.chatbotik.R
 import com.example.chatbotik.databinding.ActivityMovieBinding
 
 class MovieActivity : AppCompatActivity() {
@@ -33,9 +34,12 @@ class MovieActivity : AppCompatActivity() {
     private fun toggleVideoPlayback() {
         isPaused = if (isPaused) {
             binding.videoView.start()
+            binding.imageView15.setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_controls_pause)
+
             false
         } else {
             binding.videoView.pause()
+            binding.imageView15.setImageResource(com.google.android.exoplayer2.R.drawable.exo_icon_play)
             true
         }
     }
