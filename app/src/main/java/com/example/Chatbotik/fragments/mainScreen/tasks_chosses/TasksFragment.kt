@@ -84,6 +84,31 @@ class TasksFragment : Fragment() {
         )
     )
 
+    private val audioTaskData1kz = AudioTaskData(
+        4, listOf(
+            Pair(
+                R.raw.baursak, Pair(
+                    "Бауырсақтың пісіру үшін қандай қамыр салу керек?",
+                    Pair(listOf("Май", "Жұмыртқа", "Сүт", "Тұз"), "Жұмыртқа")
+
+                )
+            ),
+            Pair(
+                R.raw.baursak, Pair(
+
+                    "Ашытпай пісірген бауырсақтың мөлшеріне қарай салынады?",
+                    Pair(listOf("Қамырды ашыту", "Май салу", "Жұмыртқа салу", "Сүт қою"), "Жұмыртқа салу")
+                )
+            ),
+            Pair(
+                R.raw.baursak, Pair(
+                    "Бауырсақтың іші шикі болса, оның мөлшеріне қандай салынады?",
+                    Pair(listOf("Қызыл-күрең", "Жай", "Дәмді", "Қызықты"), "Қызыл-күрең")
+                )
+            )
+        )
+    )
+
     private val grammarTaskDataPresent1 = GrammarTaskData(
         3, listOf(
             Pair(Pair("I (to do) morning exercises.", "do"), R.drawable.situation),
@@ -113,6 +138,41 @@ class TasksFragment : Fragment() {
             Pair("Key", "ключ")
         )
     )
+    private
+    val wordsList1kz =
+        DictionaryTaskData(
+            1,
+            listOf(
+                Pair(
+                    "Ит",
+                    "Собака"
+                ),
+                Pair(
+                    "Мысық",
+                    "Кошка"
+                ),
+                Pair(
+                    "Үй",
+                    "Дом"
+                ),
+                Pair(
+                    "Қыз",
+                    "Девочка"
+                ),
+                Pair(
+                    "Жас",
+                    "Возраст"
+                ),
+                Pair(
+                    "Түсіндіру",
+                    "Объяснять"
+                ),
+                Pair(
+                    "Кілт",
+                    "Ключ"
+                )
+            )
+        )
 
     private val theoryTaskPresent = GrammarTheoryData(
         4, listOf(
@@ -122,6 +182,23 @@ class TasksFragment : Fragment() {
     private val theoryTaskPresentru = GrammarTheoryData(
         4, listOf(
             "The present tense in Russian refers to actions or states that are happening in the present moment.\n"  + "It is used to talk about routines, habits, general truths, and actions happening at the present time.\n" + "To form the present tense, we typically use verb conjugation, which means that the verb changes its ending depending on the subject of the sentence.\n" +"For example:\n" + "\n" + "Он сейчас спит. – He is sleeping now.\n" + "\n" + "Я все ещё готовлю обед. – I am still cooking lunch.")
+    )
+    private val theoryTaskPresentkz = GrammarTheoryData(
+        4, listOf(
+            "2. Осы шақ\n" +
+                    "\n" +
+                    "Іс-әрекет, қимылдың сөйлеп тұрған кезде өтіп жатқанын білдіретін етістік шағының түрін осы шақ деп атайды.\n" +
+                    "\n" +
+                    "Осы шақ жасалуы мен мағынасына қарай нақ осы шақ және ауыспалы осы шақ деп бөлінеді.\n" +
+                    "\n" +
+                    "1) Нақ осы шақ деп қимылдың дәл сөйлеп тұрған кезге сәйкес келуін айтамыз.\n" +
+                    "\n" +
+                    "Мысалы: Мен отырмын (жүрмін, тұрмын, жатырмын). Біз отырмыз (жүрміз, тұрмыз, жатырмыз)\n" +
+                    "\n" +
+                    "Күрделі нақ осы шақта негізгі етістік -ып, -іп, -п жұрнақтарымен келіп, отыр, тұр, жүр, жатыр етістіктері көмекші етістік қызметінде жіктеліп жұмсалады.\n" +
+                    "\n" +
+                    "Мен оқып жатырмын. Біз оқып жатырмыз."
+        )
     )
     private val textTask1 = TextTaskData(
         1,
@@ -173,8 +250,33 @@ class TasksFragment : Fragment() {
             )
         )
     )
+    private val textTask1kz = TextTaskData(
+        1,
+        "Бауырсақ – шай, қымыз, шұбат ішкенде дастарқанға бауырсақ салады. Бауырсақты жоғары немесе бірінші сортты бидай ұнынан пісіреді. Оны қамырды ашытып та ашытпай да дайындауға болады. Ашытпай пісірген бауырсақ көпке шыдайды, ал ашытып пісірілген бауырсақ кеуіп қалса, жеуге жайсыз болады. Ашымаған қамырдан бауырсақ пісіру үшін ұнға май, жұмыртқа, сүт, тұз салып илейді. Қамырды жазып, төрт бұрыштап немесе жіңішкелеу кеседі. Кесіп дайындаған бауырсақтың бетін кеуіп кетпеу үшін жауып қойған жөн. Қазанға май салып әбден қыздырып алған соң, бауырсақ майдың мөлшеріне қарай салынады. Бауырсақты үздіксіз араластырып тұрса, бір келкі болып піседі. От қатты жанса, бауырсақтың іші шикі болады немесе тым қызарып кетеді. Қызыл-күрең болып піскен бауырсақ сәнді де, дәмді де болады.",   listOf(
+            Pair(
+                "Бауырсақтың пісіру үшін қандай қамыр салу керек?",
+                Pair(listOf("Май", "Жұмыртқа", "Сүт", "Тұз"), "Жұмыртқа")
+            ), Pair(
+                "Ашытпай пісірген бауырсақтың мөлшеріне қарай салынады?",
+                Pair(listOf("Қамырды ашыту", "Май салу", "Жұмыртқа салу", "Сүт қою"), "Жұмыртқа салу")
+            ), Pair(
+                "Бауырсақтың іші шикі болса, оның мөлшеріне қандай салынады?",
+                Pair(listOf("Қызыл-күрең", "Жай", "Дәмді", "Қызықты"), "Қызыл-күрең")
+            )
+        )
+    )
+    private val grammarTaskDataPresent1kz = GrammarTaskData(
+        3, listOf(
+            Pair(Pair("Мен теледидарды көруді жақсы (көру).", "көремін"), R.drawable.situation),
+            Pair(Pair("Ол спортпен (айналысу.", "айналысады"), R.drawable.situation),
+            Pair(Pair("Олар әр таңертеңде шай (ішу).", "ішеді"), R.drawable.situation),
+            Pair(Pair("Ол зауытта жұмыс (істеу).", "істеді "), R.drawable.situation),
+            Pair(Pair("Біз мектепте (оқу) .", "оқимыз"), R.drawable.situation)
+        )
+    )
     private val writingTask1 = WritingTaskData(6, listOf("Семья"))
     private val writingTask2ru = WritingTaskData(6, listOf("Family"))
+    private val writingTask1kz = WritingTaskData(6, listOf("Отбасы"))
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -213,13 +315,13 @@ class TasksFragment : Fragment() {
         binding.buttonWithImageAndText.setOnClickListener {
             val i = Intent(requireContext(), TaskActivity::class.java)
             val complexTask = ComplexTaskData(
-                listOf(1, 2, 3, 4, 5, 6),
-                if (language == "English") audioTaskData1 else audioTaskData2ru,
-                wordsList1,
-                if (language == "English") grammarTaskDataPresent1 else grammarTaskDataPresent1ru,
-                if (language == "English") theoryTaskPresent else theoryTaskPresentru,
-                if (language == "English") textTask1 else textTask1ru,
-                if (language == "English") writingTask1 else writingTask2ru
+                listOf(1, 3, 4, 6, 2, 5),
+                if (language == getString(R.string.english)) audioTaskData1 else if (language == getString(R.string.russian)) audioTaskData2ru else audioTaskData1kz,
+                if (language == getString(R.string.kazak_language)) wordsList1kz else wordsList1,
+                if (language == getString(R.string.english)) grammarTaskDataPresent1 else if (language == getString(R.string.russian))grammarTaskDataPresent1ru else grammarTaskDataPresent1kz,
+                if (language == getString(R.string.english)) theoryTaskPresent else if (language == getString(R.string.russian)) theoryTaskPresentru else theoryTaskPresentkz,
+                if (language == getString(R.string.english)) textTask1 else if (language == getString(R.string.russian)) textTask1ru else textTask1kz,
+                if (language == getString(R.string.english)) writingTask1 else if (language == getString(R.string.russian)) writingTask2ru else writingTask1kz
             )
             i.putExtra("complex_task_data", complexTask)
             startActivity(i)

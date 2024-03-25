@@ -177,6 +177,67 @@ class Meeting : AppCompatActivity() {
             )
         )
     )
+    private val theoryTaskPresentkz = GrammarTheoryData(
+        4, listOf(
+            "2. Осы шақ\n" +
+                    "\n" +
+                    "Іс-әрекет, қимылдың сөйлеп тұрған кезде өтіп жатқанын білдіретін етістік шағының түрін осы шақ деп атайды.\n" +
+                    "\n" +
+                    "Осы шақ жасалуы мен мағынасына қарай нақ осы шақ және ауыспалы осы шақ деп бөлінеді.\n" +
+                    "\n" +
+                    "1) Нақ осы шақ деп қимылдың дәл сөйлеп тұрған кезге сәйкес келуін айтамыз.\n" +
+                    "\n" +
+                    "Мысалы: Мен отырмын (жүрмін, тұрмын, жатырмын). Біз отырмыз (жүрміз, тұрмыз, жатырмыз)\n" +
+                    "\n" +
+                    "Күрделі нақ осы шақта негізгі етістік -ып, -іп, -п жұрнақтарымен келіп, отыр, тұр, жүр, жатыр етістіктері көмекші етістік қызметінде жіктеліп жұмсалады.\n" +
+                    "\n" +
+                    "Мен оқып жатырмын. Біз оқып жатырмыз."
+        )
+    )
+    private val grammarTaskDataPresent1kz = GrammarTaskData(
+        3, listOf(
+            Pair(Pair("Мен теледидарды көруді жақсы (көру).", "көремін"), R.drawable.situation),
+            Pair(Pair("Ол спортпен (айналысу.", "айналысады"), R.drawable.situation),
+            Pair(Pair("Олар әр таңертеңде шай (ішу).", "ішеді"), R.drawable.situation),
+            Pair(Pair("Ол зауытта жұмыс (істеу).", "істеді "), R.drawable.situation),
+            Pair(Pair("Біз мектепте (оқу) .", "оқимыз"), R.drawable.situation)
+        )
+    )
+    private
+    val wordsList1kz =
+        DictionaryTaskData(
+            1,
+            listOf(
+                Pair(
+                    "Ит",
+                    "Собака"
+                ),
+                Pair(
+                    "Мысық",
+                    "Кошка"
+                ),
+                Pair(
+                    "Үй",
+                    "Дом"
+                ),
+                Pair(
+                    "Қыз",
+                    "Девочка"
+                ),
+                Pair(
+                    "Жас",
+                    "Возраст"
+                ),
+                Pair(
+                    "Түсіндіру",
+                    "Объяснять"
+                ),
+                Pair(
+                    "Кілт",
+                    "Ключ"
+                )
+            )
+        )
     private val writingTask1 = WritingTaskData(6, listOf("Семья"))
     private val writingTask2ru = WritingTaskData(6, listOf("Family"))
 
@@ -226,6 +287,10 @@ class Meeting : AppCompatActivity() {
                     binding.progressBar2.visibility = View.VISIBLE
                     val animation = TranslateAnimation(0f, -350f, 0f, -850f)
                     animation.duration = 1500
+                    binding.option3.setButtonDrawable(android.R.drawable.btn_radio)
+                    binding.option2.setButtonDrawable(android.R.drawable.btn_radio)
+                    binding.option1.setButtonDrawable(android.R.drawable.btn_radio)
+                    binding.option.setButtonDrawable(android.R.drawable.btn_radio)
                     animation.setAnimationListener(object : Animation.AnimationListener {
                         override fun onAnimationStart(animation: Animation?) {}
 
@@ -235,6 +300,7 @@ class Meeting : AppCompatActivity() {
                             binding.textView7.translationY = -600f
                             binding.textView7.translationX = 150f
                             binding.textView7.visibility = View.VISIBLE
+                            binding.option3.isClickable = true
                             timer = Timer()
                             delay = 25
                             autoTypeText = "What would you like to \n learn?"
@@ -256,7 +322,7 @@ class Meeting : AppCompatActivity() {
                                 null
                             )
                             val usaDrawable3: Drawable? =
-                                ContextCompat.getDrawable(this@Meeting, R.drawable.germany)
+                                ContextCompat.getDrawable(this@Meeting, R.drawable.kazakstan)
                             binding.option3.setCompoundDrawablesWithIntrinsicBounds(
                                 usaDrawable3,
                                 null,
@@ -287,6 +353,14 @@ class Meeting : AppCompatActivity() {
                             editor.apply()
                             binding.option1.isChecked = false
                         }
+                        if (binding.option3.isChecked) {
+                            val sharedPreferences =
+                                getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+                            val editor = sharedPreferences.edit()
+                            editor.putString("language", binding.option3.text.toString())
+                            editor.apply()
+                            binding.option3.isChecked = false
+                        }
 
                         if (binding.option2.isChecked) {
                             val sharedPreferences =
@@ -294,12 +368,12 @@ class Meeting : AppCompatActivity() {
                             val editor = sharedPreferences.edit()
                             editor.putString("language", binding.option2.text.toString())
                             editor.apply()
-                            binding.option1.isChecked = false
+                            binding.option2.isChecked = false
                         }
                         val sharedPreferences =
                             getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
                         val retrievedText =
-                            sharedPreferences.getString("language", "Нет сохраненного текста")
+                            sharedPreferences.getString("language", "Нет сохраненного текста").toString().lowercase()
                         timer = Timer()
                         delay = 25
                         autoTypeText = "How much $retrievedText do\n you know?"
@@ -310,7 +384,6 @@ class Meeting : AppCompatActivity() {
                         binding.option2.setButtonDrawable(android.R.drawable.btn_radio)
                         binding.option1.setButtonDrawable(android.R.drawable.btn_radio)
                         binding.option.setButtonDrawable(android.R.drawable.btn_radio)
-                        binding.option3.isClickable = true
                         val usaDrawable1: Drawable? =
                             ContextCompat.getDrawable(this@Meeting, R.drawable.firstlevel)
                         binding.option1.setCompoundDrawablesWithIntrinsicBounds(
@@ -424,7 +497,7 @@ class Meeting : AppCompatActivity() {
                     val sharedPreferences =
                         getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
                     val retrievedText =
-                        sharedPreferences.getString("language", "Нет сохраненного текста")
+                        sharedPreferences.getString("language", "Нет сохраненного текста").toString().lowercase()
                     timer = Timer()
                     delay = 25
                     autoTypeText = "Why do you learning \n$retrievedText?"
@@ -567,13 +640,13 @@ class Meeting : AppCompatActivity() {
                     val language = sharedPreferences.getString("language", "Нет сохраненного текста")
                     val i = Intent(this, TaskActivity::class.java)
                     val complexTask = ComplexTaskData(
-                        listOf(1, 2, 3, 4, 5, 6),
-                        if (language == "English") audioTaskData1 else audioTaskData2ru,
-                        wordsList1,
-                        if (language == "English") grammarTaskDataPresent1 else grammarTaskDataPresent1ru,
-                        if (language == "English") theoryTaskPresent else theoryTaskPresentru,
-                        if (language == "English") textTask1 else textTask1ru,
-                        if (language == "English") writingTask1 else writingTask2ru
+                        listOf(1, 6, 2),
+                        if (language == getString(R.string.english)) audioTaskData1 else  audioTaskData2ru ,
+                        if (language == getString(R.string.kazak_language)) wordsList1kz else wordsList1,
+                        if (language == getString(R.string.english)) grammarTaskDataPresent1 else if (language == getString(R.string.russian))grammarTaskDataPresent1ru else grammarTaskDataPresent1kz,
+                        if (language == getString(R.string.english)) theoryTaskPresent else if (language == getString(R.string.russian)) theoryTaskPresentru else theoryTaskPresentkz,
+                        if (language == getString(R.string.english)) textTask1 else textTask1ru,
+                        if (language == getString(R.string.english)) writingTask1 else  writingTask2ru
                     )
                     i.putExtra("complex_task_data", complexTask)
                     startActivity(i)

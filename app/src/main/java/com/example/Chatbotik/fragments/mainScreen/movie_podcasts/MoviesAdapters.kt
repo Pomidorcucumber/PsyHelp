@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatbotik.R
 
@@ -30,12 +29,12 @@ class MoviesAdapter(private val context: Context, private val movies: List<Movie
                         Intent(itemView.context, MovieActivity::class.java).apply {
                             putExtra(
                                 "VIDEO_RES_ID", when (movie.videoUrl) {
-                                    "film1" -> if (language == "English") R.raw.filmen1 else R.raw.filmru1
-                                    "film2" -> if (language == "English") R.raw.filmen2 else R.raw.filmru2
-                                    "film3"-> if (language == "English") R.raw.multfilm_en else R.raw.filmru3
-                                    "podcast1" -> if (language == "English") R.raw.podkast_en1 else R.raw.podcastru1
-                                    "podcast2" -> if (language == "English") R.raw.podkasten2 else R.raw.podcastru2
-                                    "podcast3"-> if (language == "English") R.raw.podcasten3 else R.raw.podcastru3
+                                    "film1" ->  if (language == context.getString(R.string.kazak_language)) R.raw.filmkz1 else if (language == context.getString(R.string.english))  R.raw.filmen1 else R.raw.filmru1
+                                    "film2" ->  if (language == context.getString(R.string.kazak_language)) R.raw.filmkz2 else if (language == context.getString(R.string.english))  R.raw.filmen2 else R.raw.filmru2
+                                    "film3"->  if (language == context.getString(R.string.kazak_language)) R.raw.filmkz2 else if (language == context.getString(R.string.english))  R.raw.multfilm_en else R.raw.filmru3
+                                    "podcast1" ->  if (language == context.getString(R.string.kazak_language)) R.raw.podcastkz1 else if (language == context.getString(R.string.english)) R.raw.podkast_en1 else R.raw.podcastru1
+                                    "podcast2" ->  if (language == context.getString(R.string.kazak_language)) R.raw.podcastkz2 else if (language == context.getString(R.string.english))  R.raw.podkasten2 else R.raw.podcastru2
+                                    "podcast3"->  if (language == context.getString(R.string.kazak_language)) R.raw.podcastkz2 else if (language == context.getString(R.string.english)) R.raw.podcasten3 else R.raw.podcastru3
                                     else -> 0
                                 }
                             )

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2E3133"
-    tools:context="com.example.Chatbotik.Meeting">
+    tools:context="com.example.Chatbotik.activity.Meeting">
 
     <ImageView
         android:id="@+id/imageView6"
@@ -143,7 +143,7 @@
                 android:clickable="false"
                 android:drawablePadding="10dp"
                 android:padding="10dp"
-                android:text="@string/german_testing"
+                android:text="@string/kazak_language"
                 android:textColor="@color/white"
                 android:textColorHighlight="@color/blue"
                 android:textSize="24sp" />

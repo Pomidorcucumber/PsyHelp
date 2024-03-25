@@ -13,8 +13,8 @@
     <string name="next">Зарегистрироваться</string>
     <string name="by_signing_in_to_swifttalk_you_agree_to_our_terms_and_privacy_policy" translatable="false">By signing in to SwiftTalk, you agree to our Terms and Privacy Policy.</string>
     <string name="continues">ПРОДОЛЖИТЬ</string>
-    <string name="english">English</string>
-    <string name="russian">Russian</string>
+    <string name="english">Английский</string>
+    <string name="russian">Русский</string>
     <string name="german_testing">German(Testing)</string>
     <string name="connect_with_people">Общаться с людьми</string>
     <string name="boost_my_career">Для развития в карьере</string>
@@ -51,4 +51,5 @@
     <string name="words50_achievment">Достигните 50 слов в вашем словарном запасе</string>
     <string name="conversation_starter">Мастер Общения</string>
     <string name="first_5_messages">Постройте свои первые 5 предложений на новом языке в чате</string>
+    <string name="kazak_language">Қазақша</string>
 </resources>

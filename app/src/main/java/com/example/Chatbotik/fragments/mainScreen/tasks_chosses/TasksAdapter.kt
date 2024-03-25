@@ -2,6 +2,7 @@ package com.example.Chatbotik.fragments.mainScreen.tasks_chosses
 
 import android.content.Context
 import android.content.Intent
+import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,20 +57,26 @@ private val audioTaskData2 = AudioTaskData(
             R.raw.cowboy, Pair(
 
                 "What is the most dangerous city in America?",
-                Pair(listOf("Suin Abaline", "Amanda Kris", "Tom Helton", "Max Self"), "Suin Abaline")
+                Pair(
+                    listOf("Suin Abaline", "Amanda Kris", "Tom Helton", "Max Self"),
+                    "Suin Abaline"
+                )
             )
         ),
         Pair(
             R.raw.cowboy, Pair(
                 "What did the cowboys do when they came to town?",
-                Pair(listOf("Went home", "Went to sleep", "Took out the gun", "Relaxed"), "Took out the gun")
+                Pair(
+                    listOf("Went home", "Went to sleep", "Took out the gun", "Relaxed"),
+                    "Took out the gun"
+                )
             )
         )
     )
 )
 
 
-private val audioTaskData2ru  = AudioTaskData(
+private val audioTaskData2ru = AudioTaskData(
     4, listOf(
         Pair(
             R.raw.earth, Pair(
@@ -162,6 +169,123 @@ private val audioTaskData1ru = AudioTaskData(
             R.raw.banya, Pair(
                 "Какие веники используют в бане?",
                 Pair(listOf("Дубовые", "Берёзовые", "Кленовые", "Пихтовые"), "Берёзовые")
+            )
+        )
+    )
+)
+private val audioTaskData1kz = AudioTaskData(
+    4, listOf(
+        Pair(
+            R.raw.baursak, Pair(
+                "Бауырсақтың пісіру үшін қандай қамыр салу керек?",
+                Pair(listOf("Май", "Жұмыртқа", "Сүт", "Тұз"), "Жұмыртқа")
+
+            )
+        ),
+        Pair(
+            R.raw.baursak, Pair(
+
+                "Ашытпай пісірген бауырсақтың мөлшеріне қарай салынады?",
+                Pair(
+                    listOf("Қамырды ашыту", "Май салу", "Жұмыртқа салу", "Сүт қою"),
+                    "Жұмыртқа салу"
+                )
+            )
+        ),
+        Pair(
+            R.raw.baursak, Pair(
+                "Бауырсақтың іші шикі болса, оның мөлшеріне қандай салынады?",
+                Pair(listOf("Қызыл-күрең", "Жай", "Дәмді", "Қызықты"), "Қызыл-күрең")
+            )
+        )
+    )
+)
+private val audioTaskData2kz = AudioTaskData(
+    4, listOf(
+        Pair(
+            R.raw.kumis, Pair(
+                "Қымыздың ашылуы үшін қандай сұрақты таңдау керек?",
+                Pair(
+                    listOf(
+                        "Ауылдың қариялары қалыптастыру",
+                        "Май, шай, қымыз, шұбат салу",
+                        "Ағаш күбігіне жылқының қазысын салут",
+                        "Үйге келу"
+                    ), "Май, шай, қымыз, шұбат салу"
+                )
+
+            )
+        ),
+        Pair(
+            R.raw.kumis, Pair(
+
+                "Қымызды тәттілігін арттыру үшін не істеу керек?",
+                Pair(
+                    listOf(
+                        "Жалын салу",
+                        "Шөптен кетіргіш салу",
+                        "Арық пен атымдық жасау",
+                        "Сүт қою"
+                    ), "Арық пен атымдық жасау"
+                )
+            )
+        ),
+        Pair(
+            R.raw.kumis, Pair(
+                "Қазақтың ұғымында қымыздың ысталған ыдыста сақталатын болуы үшін қандай мақсаттарға қол жеткізілуі керек?",
+                Pair(
+                    listOf(
+                        "Ауылдың қарияларын әзірлеу",
+                        "Бие сүтінің мол болуын азайту",
+                        "Малдарды жайлау",
+                        "Уақытты өткізу"
+                    ), "Ауылдың қарияларын әзірлеу"
+                )
+            )
+        )
+    )
+)
+private val audioTaskData3kz = AudioTaskData(
+    4, listOf(
+        Pair(
+            R.raw.demalis, Pair(
+                "Өткен демалыс күні апамның үйінде не болды?",
+                Pair(
+                    listOf(
+                        "Апам мен атам арасында өмірдің көршілігі",
+                        "Апамның малдарды жайлауы",
+                        "Апам мен атам арасында көмекшілік",
+                        "Үйге келуі"
+                    ), "Апамның малдарды жайлауы"
+                )
+
+            )
+        ),
+        Pair(
+            R.raw.demalis, Pair(
+
+                "Өткен күні ауылда не істеудің мақсаты болды?",
+                Pair(
+                    listOf(
+                        "Барлық малдардың жайлауы",
+                        "Апам мен атам арасында шақырып таттыру",
+                        "Сиырларды өріске қосу",
+                        "Сүт қою"
+                    ), "Барлық малдардың жайлауы"
+                )
+            )
+        ),
+        Pair(
+            R.raw.demalis, Pair(
+                "Өткен демалыс күні апам үшін негізгі мақсат қандай болды?",
+                Pair(
+                    listOf(
+                        "Бәрімізге ыстық сүт құйып беру",
+                        "Достарымен алтыбықан тептікті ұнату",
+                        "Дастарханға шақыру үшін ауылға келгенін білдіру",
+                        "Уақытты өткізу"
+                    ), "Уақытты өткізу"
+                )
             )
         )
     )
@@ -384,6 +508,33 @@ private val grammarTaskDataPast3ru = GrammarTaskData(
     )
 )
 
+private val grammarTaskDataPresent1kz = GrammarTaskData(
+    3, listOf(
+        Pair(Pair("Мен теледидарды көруді жақсы (көру).", "көремін"), R.drawable.situation),
+        Pair(Pair("Ол спортпен (айналысу.", "айналысады"), R.drawable.situation),
+        Pair(Pair("Олар әр таңертеңде шай (ішу).", "ішеді"), R.drawable.situation),
+        Pair(Pair("Ол зауытта жұмыс (істеу).", "істеді "), R.drawable.situation),
+        Pair(Pair("Біз мектепте (оқу) .", "оқимыз"), R.drawable.situation)
+    )
+)
+private val grammarTaskDataPast1kz = GrammarTaskData(
+    3, listOf(
+        Pair(Pair("Кешеде мен сабақтарды (дайындау) .", "дайындым"), R.drawable.situation),
+        Pair(Pair("Ол сенбіде сегіз сағат (ұйықтау).", "ұйықтады"), R.drawable.situation),
+        Pair(Pair("Олар әр күнде шай (ішу) .", "ішті"), R.drawable.situation),
+        Pair(Pair("Ол сегіз сағат жұмыс (істеу).", "істеді"), R.drawable.situation),
+        Pair(Pair("Бізде үзіліс (болу).", "болды"), R.drawable.situation)
+    )
+)
+private val grammarTaskDataFuture1kz = GrammarTaskData(
+    3, listOf(
+        Pair(Pair("Мен дүйсенбіге дейін үй жұмысы (тапсыру).", "тапсырамын"), R.drawable.situation),
+        Pair(Pair("Ол ерте (ұйықтау).", "ұйықтайды"), R.drawable.situation),
+        Pair(Pair("Олар ертең шай (ішу) .", "ішеді"), R.drawable.situation),
+        Pair(Pair("Ол мұғалім (болу).", "болады"), R.drawable.situation),
+        Pair(Pair("Біз үйден қашып (кету).", "кетеміз"), R.drawable.situation)
+    )
+)
 private
 val wordsList1 =
     DictionaryTaskData(
@@ -492,6 +643,113 @@ val wordsList3 =
         )
     )
 
+private
+val wordsList1kz =
+    DictionaryTaskData(
+        1,
+        listOf(
+            Pair(
+                "Ит",
+                "Собака"
+            ),
+            Pair(
+                "Мысық",
+                "Кошка"
+            ),
+            Pair(
+                "Үй",
+                "Дом"
+            ),
+            Pair(
+                "Қыз",
+                "Девочка"
+            ),
+            Pair(
+                "Жас",
+                "Возраст"
+            ),
+            Pair(
+                "Түсіндіру",
+                "Объяснять"
+            ),
+            Pair(
+                "Кілт",
+                "Ключ"
+            )
+        )
+    )
+
+private
+val wordsList2kz =
+    DictionaryTaskData(
+        1,
+        listOf(
+            Pair(
+                "Бөлім",
+                "Раздел"
+            ),
+            Pair(
+                "Көйлек",
+                "Платье"
+            ),
+            Pair(
+                "Бұлт",
+                "Облако"
+            ),
+            Pair(
+                "Таңқаларлық",
+                "Сюрприз"
+            ),
+            Pair(
+                "Тыныш",
+                "Тихо/тихий"
+            ),
+            Pair(
+                "Темір",
+                "Железо"
+            ),
+            Pair(
+                "Бір",
+                "Один"
+            )
+        )
+    )
+
+private
+val wordsList3kz =
+    DictionaryTaskData(
+        1,
+        listOf(
+            Pair(
+                "Тас",
+                "Камень"
+            ),
+            Pair(
+                "Кішкентай",
+                "Крошечный"
+            ),
+            Pair(
+                "Өрмелеу",
+                "Подъем/взбираться"
+            ),
+            Pair(
+                "Салқын",
+                "Прохладно"
+            ),
+            Pair(
+                "Дизайн",
+                "Дизайн"
+            ),
+            Pair(
+                "Пәтер",
+                "Квартира"
+            ),
+            Pair(
+                "Секіру",
+                "Прыгать"
+            )
+        )
+    )
 private val theoryTaskPresent = GrammarTheoryData(
     4, listOf(
         "Что такое Present Simple?\n" + "Это простое настоящее время, обозначающее действие в самом широком смысле этого слова. Одна из самых распространенных и простых форм в английском языке для описания действий.\n" + "Действия могут быть связаны с привычками, хобби, ежедневным событием вроде подъема по утрам или чем-то, что случается регулярно.\n" + "\n" + "Как образуется Present Simple?\n" + "Нет ничего проще, чем поставить глагол в форму Present Simple. Для этого нужно убрать у глагола в инфинитиве частицу «to» и поставить глагол после подлежащего. Это и есть основное правило Present Simple .\n" + "Утверждение:\n" + "I / We / You / They + V\n" + "She / He / It + V + s (es)\n" + "I go to work every day — Я хожу на работу каждый день.\n" + "They usually play tennis every weekend — Они обычно играют в теннис каждые выходные.\n" + "She brings me coffee every morning — Она приносит мне кофе каждое утро.\n" + "It snows in winter — Зимой идет снег.\n" + "ВАЖНО: В Present Simple форма глагола практически всегда совпадает с изначальной. Исключение составляет третье лицо единственного числа (he / she / it) — к нему прибавляется окончание -s:\n" + "I ride — She rides\n" + "I dream — He dreams\n" + "Если глагол оканчивается на -s, -ss, -sh, -ch, -x, -o, то к нему прибавляется окончание -es\n" + "I wish — She wishes\n" + "I teach — She teaches\n" + "Если глагол оканчивается на -y, а ему предшествует согласная, то к нему прибавляется окончание -es, но -y заменяется на -i\n" + "I try — She tries\n" + "I fly — He flies\n" + "Если глагол оканчивается на -y, а ему предшествует гласная, то к нему также прибавляется окончание -s, но -y не меняется.\n" + "I play — She plays\n" + "I stay — He stays\n"
@@ -500,6 +758,23 @@ private val theoryTaskPresent = GrammarTheoryData(
 private val theoryTaskPresentru = GrammarTheoryData(
     4, listOf(
         "The present tense in Russian refers to actions or states that are happening in the present moment.\n" + "It is used to talk about routines, habits, general truths, and actions happening at the present time.\n" + "To form the present tense, we typically use verb conjugation, which means that the verb changes its ending depending on the subject of the sentence.\n" + "For example:\n" + "\n" + "Он сейчас спит. – He is sleeping now.\n" + "\n" + "Я все ещё готовлю обед. – I am still cooking lunch."
+    )
+)
+private val theoryTaskPresentkz = GrammarTheoryData(
+    4, listOf(
+        "2. Осы шақ\n" +
+                "\n" +
+                "Іс-әрекет, қимылдың сөйлеп тұрған кезде өтіп жатқанын білдіретін етістік шағының түрін осы шақ деп атайды.\n" +
+                "\n" +
+                "Осы шақ жасалуы мен мағынасына қарай нақ осы шақ және ауыспалы осы шақ деп бөлінеді.\n" +
+                "\n" +
+                "1) Нақ осы шақ деп қимылдың дәл сөйлеп тұрған кезге сәйкес келуін айтамыз.\n" +
+                "\n" +
+                "Мысалы: Мен отырмын (жүрмін, тұрмын, жатырмын). Біз отырмыз (жүрміз, тұрмыз, жатырмыз)\n" +
+                "\n" +
+                "Күрделі нақ осы шақта негізгі етістік -ып, -іп, -п жұрнақтарымен келіп, отыр, тұр, жүр, жатыр етістіктері көмекші етістік қызметінде жіктеліп жұмсалады.\n" +
+                "\n" +
+                "Мен оқып жатырмын. Біз оқып жатырмыз."
     )
 )
 private val theoryTaskPast = GrammarTheoryData(
@@ -520,6 +795,13 @@ private val theoryTaskPastru = GrammarTheoryData(
                 "Оно знало - It knew"
     )
 )
+private val theoryTaskPastkz = GrammarTheoryData(
+    4, listOf(
+        "Іс-әрекеттің сөйлеп тұрған кезден бұрын болғанын білдіретін шак түрін өткен шақ дейміз. Қазақ тілінде өткен шақтың үш түрі бар. Олар: жедел өткен шақ, бұрынғы өткен шақ және ауыспалы өткен шақ. 1) Жедел өткен шақ - сөйлеп тұрған мезгілден аз уакыт бұрын болған, сол кезге жақын өткен істі білдіретін өткен шақ түрі.\n" +
+                "\n" +
+                "Мысалы: 1. Мен ауылга келдім. 2. Сен кітапханада болдың."
+    )
+)
 private val theoryTaskFuture = GrammarTheoryData(
     4, listOf(
         "Future Simple - простое будущее время\n" + "    Время Future Simple ссылается на действие, которое совершится в неопределенном или отдаленном будущем.\n" + "    Простое будущее время в английском языке обычно используется с обстоятельствами:\n" + "    next year – в следующем году; in five years – через пять лет; in 2095 – в 2095 году\n" + "\n" + "    Образование Future Simple\n" + "\n" + "    Утвердительные предложения:\n" + "    I will play.  We will play.  You will play.  You will play.  He / she / it will play.  They will play.\n" + "    Вопросительные предложения:\n" + "    Will I play?\tWill we play?  Will you play?  Will you play?  Will he / she / it play?  Will they play?\n" + "    Отрицательные предложения:\n" + "    I will not play.  We will not play.  You will not play.\tYou will not play.  He / she / it will not play.  They will not play.\n"
@@ -530,6 +812,27 @@ private val theoryTaskFutureru = GrammarTheoryData(
         "Russian future tense can have two forms: simple (via adding personal endings to verbs of perfective aspect), and compound (via using the verb “to be” in the future tense + the infinitive)." + "Я сделаю домашнее задание завтра (Future Simple Tense in Russian) =\n" +
                 "\n" +
                 "I will do (finish) my homework tomorrow (Future Simple Tense in English)"
+    )
+)
+private val theoryTaskFuturekz = GrammarTheoryData(
+    4, listOf(
+        "3. Келер шақ\n" +
+                "\n" +
+                "Келер шақ - сөйлеп тұрған кезден кейін болатын іс-қимылды білдіретін шақ түрі. Мысалы: 1. Кітапханага ертең барамыз. 2. Ауылға жол түссе бармақпыз. Келер шақ жасалуы мен мағынасына қарай болжалды келер шақ, мақсатты келер шақ, ауыспалы келер шақ деп үшке бөлінеді.\n" +
+                "\n" +
+                "1) Болжалды келер шақ іс-әрекеттің кейін болатын, болмайтынына болжам, жорамалды білдіреді.\n" +
+                "\n" +
+                "Мысалы: Апам бір амалын табар.\n" +
+                "\n" +
+                "2) Мақсатты келер шақта етістік арқылы іс-әрекеттің өту, болу мақсаты айтылады.\n" +
+                "\n" +
+                "Мысалы: 1. Алматыға баруға ниет етпекпін.\n" +
+                "\n" +
+                "2. Жоба жұмысын бугін-ертеңдер бітірмекпін.\n" +
+                "\n" +
+                "3) Шақтық мағына сөйлем ыңғайына қарай айқындалатын келер шақ түрі ауыспалы келер шақ деп аталады.\n" +
+                "\n" +
+                "Мысалы: Олимпиаданың қорытындысын ертең айтады."
     )
 )
 private val textTask1 = TextTaskData(
@@ -632,7 +935,8 @@ private val textTask2ru = TextTaskData(
 )
 private val textTask3 = TextTaskData(
     1,
-    "I used to work on cruise ships as a musician. I travelled a lot! I spent the month before the first lockdown in four continents! I used to get up really early, drive to the airport and fly to a port across the world and get on a ship just to get to work! Then I used to spend between three and fourteen days on the ship. The ships were great. The food was excellent, and the staff were brilliant. The ship stopped at fantastic places, and I often used to spend the afternoon at the beach drinking cocktails or sightseeing. But there were disadvantages too. I often didn’t know anyone on the ship. But the passengers all knew me, and they used to talk to me every time I left my cabin. I didn’t have any privacy. Of course, I had to chat to them politely even when I wasn’t in the mood." , listOf(
+    "I used to work on cruise ships as a musician. I travelled a lot! I spent the month before the first lockdown in four continents! I used to get up really early, drive to the airport and fly to a port across the world and get on a ship just to get to work! Then I used to spend between three and fourteen days on the ship. The ships were great. The food was excellent, and the staff were brilliant. The ship stopped at fantastic places, and I often used to spend the afternoon at the beach drinking cocktails or sightseeing. But there were disadvantages too. I often didn’t know anyone on the ship. But the passengers all knew me, and they used to talk to me every time I left my cabin. I didn’t have any privacy. Of course, I had to chat to them politely even when I wasn’t in the mood.",
+    listOf(
         Pair(
             "What is the job of author?",
             Pair(listOf("Musician", "Gamer", "Policeman", "Footballer"), "Musician")
@@ -672,9 +976,97 @@ private val textTask3ru = TextTaskData(
         )
     )
 )
+private val textTask1kz = TextTaskData(
+    1,
+    "Бауырсақ – шай, қымыз, шұбат ішкенде дастарқанға бауырсақ салады. Бауырсақты жоғары немесе бірінші сортты бидай ұнынан пісіреді. Оны қамырды ашытып та ашытпай да дайындауға болады. Ашытпай пісірген бауырсақ көпке шыдайды, ал ашытып пісірілген бауырсақ кеуіп қалса, жеуге жайсыз болады. Ашымаған қамырдан бауырсақ пісіру үшін ұнға май, жұмыртқа, сүт, тұз салып илейді. Қамырды жазып, төрт бұрыштап немесе жіңішкелеу кеседі. Кесіп дайындаған бауырсақтың бетін кеуіп кетпеу үшін жауып қойған жөн. Қазанға май салып әбден қыздырып алған соң, бауырсақ майдың мөлшеріне қарай салынады. Бауырсақты үздіксіз араластырып тұрса, бір келкі болып піседі. От қатты жанса, бауырсақтың іші шикі болады немесе тым қызарып кетеді. Қызыл-күрең болып піскен бауырсақ сәнді де, дәмді де болады.",
+    listOf(
+        Pair(
+            "Бауырсақтың пісіру үшін қандай қамыр салу керек?",
+            Pair(listOf("Май", "Жұмыртқа", "Сүт", "Тұз"), "Жұмыртқа")
+        ), Pair(
+            "Ашытпай пісірген бауырсақтың мөлшеріне қарай салынады?",
+            Pair(listOf("Қамырды ашыту", "Май салу", "Жұмыртқа салу", "Сүт қою"), "Жұмыртқа салу")
+        ), Pair(
+            "Бауырсақтың іші шикі болса, оның мөлшеріне қандай салынады?",
+            Pair(listOf("Қызыл-күрең", "Жай", "Дәмді", "Қызықты"), "Қызыл-күрең")
+        )
+    )
+)
+private val textTask2kz = TextTaskData(
+    1,
+    "Қымыз—қазақ халқының ұлттық тағамдарының ішіндегі ең бағалы дастарқан дәмінің бірі. Ол тек қана бие сүтінен ашытылады. Қазақтың ұғымында ең дәмді қымыз ысталған ыдыста сақталады. Қымызды ағаш күбіге немесе торсыққа ыстайды. Ысталған қымыз тәтті болу үшін қымызға жылқының қазысын немесе жалын салып қойып, көп піседі. Алғашқы қымызды ауылдың қарияларын шақырып таттыру рәсімін орындаған. Ол ырымдар бие сүтінің мол болуын тілеуге, бата беруге арналған.",
+    listOf(
+        Pair(
 
+            "Қымызды тәттілігін арттыру үшін не істеу керек?",
+            Pair(
+                listOf("Жалын салу", "Шөптен кетіргіш салу", "Арық пен атымдық жасау", "Сүт қою"),
+                "Арық пен атымдық жасау"
+            )
+        ), Pair(
+            "Қымыздың ашылуы үшін қандай сұрақты таңдау керек?",
+            Pair(
+                listOf(
+                    "Ауылдың қариялары қалыптастыру",
+                    "Май, шай, қымыз, шұбат салу",
+                    "Ағаш күбігіне жылқының қазысын салут",
+                    "Үйге келу"
+                ), "Май, шай, қымыз, шұбат салу"
+            )
+        ), Pair(
+            "Қазақтың ұғымында қымыздың ысталған ыдыста сақталатын болуы үшін қандай мақсаттарға қол жеткізілуі керек?",
+            Pair(
+                listOf(
+                    "Ауылдың қарияларын әзірлеу",
+                    "Бие сүтінің мол болуын азайту",
+                    "Малдарды жайлау",
+                    "Уақытты өткізу"
+                ), "Ауылдың қарияларын әзірлеу"
+            )
+        )
+    )
+)
+private val textTask3kz = TextTaskData(
+    1,
+    "Өткен демалыс күні ауылдағы нағашы апамның үйінде болдым. Сөйтіп апам мен атама көмектестім. Ауылдағы өмір өте қызық. Ерте әтештің шақырған дауысымен ояндым. Апам бие сауып жатыр екен. Атам малдарды жайлауға шығарып жатыр екен. Мен сиырларды өріске қосып келдім. Сосын атам екеуіміз қозы– лақтарды қораға шығарып, құстарға жем салдық. Осы кезде апам бізді дастарханға шақырды. Барлығымыз жазғы ас үйде отырып таңғы асымызды іштік. Апам бәрімізге үлкен кесемен ыстық сүт құйып берді. Сосын біз атам екеуіміз шөп шаптық. Кешке достарыммен алтыбықан тептік. Осылайша, бір күннің қалай өткенін білмей қалдым.",
+    listOf(
+        Pair(
+            "Өткен демалыс күні апамның үйінде не болды?",
+            Pair(
+                listOf(
+                    "Апам мен атам арасында өмірдің көршілігі",
+                    "Апамның малдарды жайлауы",
+                    "Апам мен атам арасында көмекшілік",
+                    "Үйге келуі"
+                ), "Апамның малдарды жайлауы"
+            )
+        ), Pair(
+
+            "Өткен күні ауылда не істеудің мақсаты болды?",
+            Pair(
+                listOf(
+                    "Барлық малдардың жайлауы",
+                    "Апам мен атам арасында шақырып таттыру",
+                    "Сиырларды өріске қосу",
+                    "Сүт қою"
+                ), "Барлық малдардың жайлауы"
+            )
+        ), Pair(
+            "Өткен демалыс күні апам үшін негізгі мақсат қандай болды?",
+            Pair(
+                listOf(
+                    "Бәрімізге ыстық сүт құйып беру",
+                    "Достарымен алтыбықан тептікті ұнату",
+                    "Дастарханға шақыру үшін ауылға келгенін білдіру",
+                    "Уақытты өткізу"
+                ), "Уақытты өткізу"
+            )
+        )
+    )
+)
 private val writingTask1 = WritingTaskData(6, listOf("Семья"))
 private val writingTask2ru = WritingTaskData(6, listOf("Family"))
+private val writingTask1kz = WritingTaskData(6, listOf("Отбасы"))
 
 class TasksAdapter(
     private val tasks: List<Task>,
@@ -693,14 +1085,13 @@ class TasksAdapter(
             itemView.setOnClickListener {
                 val position = bindingAdapterPosition
                 if (position != RecyclerView.NO_POSITION) {
-                    val task = tasks[position]
                     val context = itemView.context
                     val intent = Intent(context, TaskActivity::class.java)
                     val comlexTask = when (position + 1) {
                         1 -> ComplexTaskData(
                             listOf(1),
                             audioTaskData1,
-                            wordsList1,
+                            if (language == context.getString(R.string.kazak_language)) wordsList1kz else wordsList1,
                             grammarTaskDataPresent1,
                             theoryTaskPresent,
                             textTask1,
@@ -710,7 +1101,7 @@ class TasksAdapter(
                         2 -> ComplexTaskData(
                             listOf(1),
                             audioTaskData1,
-                            wordsList2,
+                            if (language == context.getString(R.string.kazak_language)) wordsList2kz else wordsList2,
                             grammarTaskDataPresent1,
                             theoryTaskPresent,
                             textTask1,
@@ -720,7 +1111,7 @@ class TasksAdapter(
                         3 -> ComplexTaskData(
                             listOf(1),
                             audioTaskData1,
-                            wordsList3,
+                            if (language == context.getString(R.string.kazak_language)) wordsList3kz else wordsList3,
                             grammarTaskDataPresent1,
                             theoryTaskPresent,
                             textTask1,
@@ -731,8 +1122,8 @@ class TasksAdapter(
                             listOf(6, 2),
                             audioTaskData1,
                             wordsList1,
-                            if (language == "English") grammarTaskDataPresent1 else grammarTaskDataPresent1ru,
-                            if (language == "English") theoryTaskPresent else theoryTaskPresentru,
+                            if (language == context.getString(R.string.kazak_language)) grammarTaskDataPresent1kz else if (language == context.getString(R.string.english)) grammarTaskDataPresent1 else grammarTaskDataPresent1ru,
+                            if (language == context.getString(R.string.kazak_language)) theoryTaskPresentkz else if (language == context.getString(R.string.english)) theoryTaskPresent else theoryTaskPresentru,
                             textTask1,
                             writingTask1
                         )
@@ -741,8 +1132,8 @@ class TasksAdapter(
                             listOf(6, 2),
                             audioTaskData1,
                             wordsList1,
-                            if (language == "English") grammarTaskDataPresent2 else grammarTaskDataPresent2ru,
-                            if (language == "English") theoryTaskPresent else theoryTaskPresentru,
+                            if (language == context.getString(R.string.kazak_language)) grammarTaskDataPresent1kz else if (language == context.getString(R.string.english)) grammarTaskDataPresent2 else grammarTaskDataPresent2ru,
+                            if (language == context.getString(R.string.kazak_language)) theoryTaskPresentkz else if (language == context.getString(R.string.english)) theoryTaskPresent else theoryTaskPresentru,
                             textTask1,
                             writingTask1
                         )
@@ -751,8 +1142,8 @@ class TasksAdapter(
                             listOf(6, 2),
                             audioTaskData1,
                             wordsList1,
-                            if (language == "English") grammarTaskDataPresent3 else grammarTaskDataPresent3ru,
-                            if (language == "English") theoryTaskPresent else theoryTaskPresentru,
+                            if (language == context.getString(R.string.kazak_language)) grammarTaskDataPresent1kz else if (language == context.getString(R.string.english)) grammarTaskDataPresent3 else grammarTaskDataPresent3ru,
+                            if (language == context.getString(R.string.kazak_language)) theoryTaskPresentkz else if (language == context.getString(R.string.english)) theoryTaskPresent else theoryTaskPresentru,
                             textTask1,
                             writingTask1
                         )
@@ -761,8 +1152,8 @@ class TasksAdapter(
                             listOf(6, 2),
                             audioTaskData1,
                             wordsList1,
-                            if (language == "English") grammarTaskDataPast1 else grammarTaskDataPast1ru,
-                            if (language == "English") theoryTaskPast else theoryTaskPastru,
+                            if (language == context.getString(R.string.kazak_language)) grammarTaskDataPast1kz else if (language == context.getString(R.string.english)) grammarTaskDataPast1 else grammarTaskDataPast1ru,
+                            if (language == context.getString(R.string.kazak_language)) theoryTaskPastkz else if (language == context.getString(R.string.english)) theoryTaskPast else theoryTaskPastru,
                             textTask1,
                             writingTask1
                         )
@@ -771,8 +1162,8 @@ class TasksAdapter(
                             listOf(6, 2),
                             audioTaskData1,
                             wordsList1,
-                            if (language == "English") grammarTaskDataPast2 else grammarTaskDataPast2ru,
-                            if (language == "English") theoryTaskPast else theoryTaskPastru,
+                            if (language == context.getString(R.string.kazak_language)) grammarTaskDataPast1kz else if (language == context.getString(R.string.english)) grammarTaskDataPast2 else grammarTaskDataPast2ru,
+                            if (language == context.getString(R.string.kazak_language)) theoryTaskPastkz else if (language == context.getString(R.string.english)) theoryTaskPast else theoryTaskPastru,
                             textTask1,
                             writingTask1
                         )
@@ -781,8 +1172,8 @@ class TasksAdapter(
                             listOf(6, 2),
                             audioTaskData1,
                             wordsList1,
-                            if (language == "English") grammarTaskDataPast3 else grammarTaskDataPast3ru,
-                            if (language == "English") theoryTaskPast else theoryTaskPastru,
+                            if (language == context.getString(R.string.kazak_language)) grammarTaskDataPast1kz else if (language == context.getString(R.string.english)) grammarTaskDataPast3 else grammarTaskDataPast3ru,
+                            if (language == context.getString(R.string.kazak_language)) theoryTaskPastkz else if (language == context.getString(R.string.english)) theoryTaskPast else theoryTaskPastru,
                             textTask1,
                             writingTask1
                         )
@@ -791,8 +1182,8 @@ class TasksAdapter(
                             listOf(6, 2),
                             audioTaskData1,
                             wordsList1,
-                            if (language == "English") grammarTaskDataFuture1 else grammarTaskDataFuture1ru,
-                            if (language == "English") theoryTaskFuture else theoryTaskFutureru,
+                            if (language == context.getString(R.string.kazak_language)) grammarTaskDataFuture1kz else if (language == context.getString(R.string.english))  grammarTaskDataFuture1 else grammarTaskDataFuture1ru,
+                            if (language == context.getString(R.string.kazak_language)) theoryTaskFuturekz else if (language == context.getString(R.string.english)) theoryTaskFuture else theoryTaskFutureru,
                             textTask1,
                             writingTask1
                         )
@@ -801,8 +1192,8 @@ class TasksAdapter(
                             listOf(6, 2),
                             audioTaskData1,
                             wordsList1,
-                            if (language == "English") grammarTaskDataFuture2 else grammarTaskDataFuture2ru,
-                            if (language == "English") theoryTaskFuture else theoryTaskFutureru,
+                            if (language == context.getString(R.string.kazak_language)) grammarTaskDataFuture1kz else if (language == context.getString(R.string.english))  grammarTaskDataFuture2 else grammarTaskDataFuture2ru,
+                            if (language == context.getString(R.string.kazak_language)) theoryTaskFuturekz else if (language == context.getString(R.string.english)) theoryTaskFuture else theoryTaskFutureru,
                             textTask1,
                             writingTask1
                         )
@@ -811,15 +1202,15 @@ class TasksAdapter(
                             listOf(6, 2),
                             audioTaskData1,
                             wordsList1,
-                            if (language == "English") grammarTaskDataFuture3 else grammarTaskDataFuture3ru,
-                            if (language == "English") theoryTaskFuture else theoryTaskFutureru,
+                            if (language == context.getString(R.string.kazak_language)) grammarTaskDataFuture1kz else if (language == context.getString(R.string.english))  grammarTaskDataFuture3 else grammarTaskDataFuture3ru,
+                            if (language == context.getString(R.string.kazak_language)) theoryTaskFuturekz else if (language == context.getString(R.string.english)) theoryTaskFuture else theoryTaskFutureru,
                             textTask1,
                             writingTask1
                         )
 
                         13 -> ComplexTaskData(
                             listOf(4),
-                            if (language == "English") audioTaskData1 else audioTaskData1ru,
+                            if (language == context.getString(R.string.kazak_language)) audioTaskData1kz else if (language == context.getString(R.string.english)) audioTaskData1 else audioTaskData1ru,
                             wordsList1,
                             grammarTaskDataPresent1,
                             theoryTaskPresent,
@@ -829,7 +1220,7 @@ class TasksAdapter(
 
                         14 -> ComplexTaskData(
                             listOf(4),
-                            if (language == "English") audioTaskData2 else audioTaskData2ru,
+                            if (language == context.getString(R.string.kazak_language)) audioTaskData2kz else if (language == context.getString(R.string.english)) audioTaskData2 else audioTaskData2ru,
                             wordsList1,
                             grammarTaskDataPresent1,
                             theoryTaskPresent,
@@ -839,7 +1230,7 @@ class TasksAdapter(
 
                         15 -> ComplexTaskData(
                             listOf(4),
-                            if (language == "English") audioTaskData3 else audioTaskData3ru,
+                            if (language == context.getString(R.string.kazak_language)) audioTaskData3kz else if (language == context.getString(R.string.english)) audioTaskData3 else audioTaskData3ru,
                             wordsList1,
                             grammarTaskDataPresent1,
                             theoryTaskPresent,
@@ -853,7 +1244,7 @@ class TasksAdapter(
                             wordsList1,
                             grammarTaskDataPresent1,
                             theoryTaskPresent,
-                            if (language == "English") textTask1 else textTask1ru,
+                            if (language == context.getString(R.string.kazak_language)) textTask1kz else if (language == context.getString(R.string.english)) textTask1 else textTask1ru,
                             writingTask1
                         )
 
@@ -863,7 +1254,7 @@ class TasksAdapter(
                             wordsList1,
                             grammarTaskDataPresent1,
                             theoryTaskPresent,
-                            if (language == "English") textTask2 else textTask2ru,
+                            if (language == context.getString(R.string.kazak_language)) textTask2kz else if (language == context.getString(R.string.english)) textTask2 else textTask2ru,
                             writingTask1
                         )
 
@@ -873,7 +1264,7 @@ class TasksAdapter(
                             wordsList1,
                             grammarTaskDataPresent1,
                             theoryTaskPresent,
-                            if (language == "English") textTask3 else textTask3ru,
+                            if (language == context.getString(R.string.kazak_language)) textTask3kz else if (language == context.getString(R.string.english)) textTask3 else textTask3ru,
                             writingTask1
                         )
 
@@ -884,7 +1275,7 @@ class TasksAdapter(
                             grammarTaskDataPresent1,
                             theoryTaskPresent,
                             textTask1,
-                            if (language == "English") writingTask1 else writingTask2ru,
+                            if (language == context.getString(R.string.kazak_language)) writingTask1kz else if (language == context.getString(R.string.english)) writingTask1 else writingTask2ru,
                         )
 
                         else -> ComplexTaskData(
