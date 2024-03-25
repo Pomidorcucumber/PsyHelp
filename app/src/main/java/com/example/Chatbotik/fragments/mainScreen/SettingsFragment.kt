@@ -57,7 +57,7 @@ class SettingsFragment : Fragment() {
         val sharedPreferences = requireContext().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
         val namePer = sharedPreferences.getString("name", "Ivan")
         val surnamePer = sharedPreferences.getString("surname", "Ivanovich")
-        binding.textView21.text = if(auth.currentUser?.displayName == null)"$namePer $surnamePer" else auth.currentUser?.displayName
+        binding.textView21.text = if (auth.currentUser?.displayName.isNullOrEmpty())"$namePer $surnamePer" else auth.currentUser?.displayName
         val photoUrl = auth.currentUser?.photoUrl
         val uri: Uri? = photoUrl?.let { Uri.parse(it.toString()) }
         binding.imageView12.setImageResource(com.google.firebase.database.R.drawable.common_google_signin_btn_icon_dark)

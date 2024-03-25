@@ -37,6 +37,7 @@ class ChatActivity : AppCompatActivity() {
         auth = Firebase.auth
         setUpActionBar()
         val database = Firebase.database
+        val selectedChatId = if (auth.currentUser?.displayName.isNullOrEmpty())"$namePer $surnamePer" else auth.currentUser?.displayName
         val myRef = database.getReference("messages/$language/$nameSpec")
         binding.bSend.setOnClickListener {
             val sharedPreferences =
@@ -45,7 +46,7 @@ class ChatActivity : AppCompatActivity() {
             val editor = sharedPreferences.edit()
             editor.putInt("num_message", value)
             editor.apply()
-            myRef.child(myRef.push().key ?: "blabla").setValue(User(auth.currentUser?.displayName, binding.edMessage.text.toString()))
+            myRef.child(myRef.push().key ?: "blabla").setValue(User(selectedChatId, binding.edMessage.text.toString()))
             binding.edMessage.setText("")
         }
         binding.imageView.setOnClickListener {
