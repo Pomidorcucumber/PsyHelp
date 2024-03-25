@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     android:background="@drawable/background_choose"
     tools:context="com.example.Chatbotik.fragments.mainScreen.ChatFragment">
 
@@ -26,7 +27,9 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textView13">
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/constraintLayout"
@@ -163,5 +166,19 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView11"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@color/common_google_signin_btn_text_dark_disabled"
+        android:drawableRight="@drawable/discord"
+        android:gravity="center"
+        android:text="Если ты хочешь поговорить в аудио чате, скорее залетай к нам в дискорд канал"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
