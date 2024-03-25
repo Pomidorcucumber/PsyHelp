@@ -97,7 +97,10 @@ class TasksFragment : Fragment() {
                 R.raw.baursak, Pair(
 
                     "Ашытпай пісірген бауырсақтың мөлшеріне қарай салынады?",
-                    Pair(listOf("Қамырды ашыту", "Май салу", "Жұмыртқа салу", "Сүт қою"), "Жұмыртқа салу")
+                    Pair(
+                        listOf("Қамырды ашыту", "Май салу", "Жұмыртқа салу", "Сүт қою"),
+                        "Жұмыртқа салу"
+                    )
                 )
             ),
             Pair(
@@ -138,6 +141,7 @@ class TasksFragment : Fragment() {
             Pair("Key", "ключ")
         )
     )
+
     private
     val wordsList1kz =
         DictionaryTaskData(
@@ -181,7 +185,8 @@ class TasksFragment : Fragment() {
     )
     private val theoryTaskPresentru = GrammarTheoryData(
         4, listOf(
-            "The present tense in Russian refers to actions or states that are happening in the present moment.\n"  + "It is used to talk about routines, habits, general truths, and actions happening at the present time.\n" + "To form the present tense, we typically use verb conjugation, which means that the verb changes its ending depending on the subject of the sentence.\n" +"For example:\n" + "\n" + "Он сейчас спит. – He is sleeping now.\n" + "\n" + "Я все ещё готовлю обед. – I am still cooking lunch.")
+            "The present tense in Russian refers to actions or states that are happening in the present moment.\n" + "It is used to talk about routines, habits, general truths, and actions happening at the present time.\n" + "To form the present tense, we typically use verb conjugation, which means that the verb changes its ending depending on the subject of the sentence.\n" + "For example:\n" + "\n" + "Он сейчас спит. – He is sleeping now.\n" + "\n" + "Я все ещё готовлю обед. – I am still cooking lunch."
+        )
     )
     private val theoryTaskPresentkz = GrammarTheoryData(
         4, listOf(
@@ -243,22 +248,36 @@ class TasksFragment : Fragment() {
                 )
             ), Pair(
                 "Что сделали ребята?",
-                Pair(listOf("Скучали", "Обменялись вещами", "Пошли гулять", "Играли"), "Обменялись вещами")
+                Pair(
+                    listOf("Скучали", "Обменялись вещами", "Пошли гулять", "Играли"),
+                    "Обменялись вещами"
+                )
             ), Pair(
                 "Из-за чего грустил Виталик?",
-                Pair(listOf("Из-за пустой банки", "Из-за оценок", "Из-за ссоры с родителями", "Из-за песни"), "Из-за пустой банки")
+                Pair(
+                    listOf(
+                        "Из-за пустой банки",
+                        "Из-за оценок",
+                        "Из-за ссоры с родителями",
+                        "Из-за песни"
+                    ), "Из-за пустой банки"
+                )
             )
         )
     )
     private val textTask1kz = TextTaskData(
         1,
-        "Бауырсақ – шай, қымыз, шұбат ішкенде дастарқанға бауырсақ салады. Бауырсақты жоғары немесе бірінші сортты бидай ұнынан пісіреді. Оны қамырды ашытып та ашытпай да дайындауға болады. Ашытпай пісірген бауырсақ көпке шыдайды, ал ашытып пісірілген бауырсақ кеуіп қалса, жеуге жайсыз болады. Ашымаған қамырдан бауырсақ пісіру үшін ұнға май, жұмыртқа, сүт, тұз салып илейді. Қамырды жазып, төрт бұрыштап немесе жіңішкелеу кеседі. Кесіп дайындаған бауырсақтың бетін кеуіп кетпеу үшін жауып қойған жөн. Қазанға май салып әбден қыздырып алған соң, бауырсақ майдың мөлшеріне қарай салынады. Бауырсақты үздіксіз араластырып тұрса, бір келкі болып піседі. От қатты жанса, бауырсақтың іші шикі болады немесе тым қызарып кетеді. Қызыл-күрең болып піскен бауырсақ сәнді де, дәмді де болады.",   listOf(
+        "Бауырсақ – шай, қымыз, шұбат ішкенде дастарқанға бауырсақ салады. Бауырсақты жоғары немесе бірінші сортты бидай ұнынан пісіреді. Оны қамырды ашытып та ашытпай да дайындауға болады. Ашытпай пісірген бауырсақ көпке шыдайды, ал ашытып пісірілген бауырсақ кеуіп қалса, жеуге жайсыз болады. Ашымаған қамырдан бауырсақ пісіру үшін ұнға май, жұмыртқа, сүт, тұз салып илейді. Қамырды жазып, төрт бұрыштап немесе жіңішкелеу кеседі. Кесіп дайындаған бауырсақтың бетін кеуіп кетпеу үшін жауып қойған жөн. Қазанға май салып әбден қыздырып алған соң, бауырсақ майдың мөлшеріне қарай салынады. Бауырсақты үздіксіз араластырып тұрса, бір келкі болып піседі. От қатты жанса, бауырсақтың іші шикі болады немесе тым қызарып кетеді. Қызыл-күрең болып піскен бауырсақ сәнді де, дәмді де болады.",
+        listOf(
             Pair(
                 "Бауырсақтың пісіру үшін қандай қамыр салу керек?",
                 Pair(listOf("Май", "Жұмыртқа", "Сүт", "Тұз"), "Жұмыртқа")
             ), Pair(
                 "Ашытпай пісірген бауырсақтың мөлшеріне қарай салынады?",
-                Pair(listOf("Қамырды ашыту", "Май салу", "Жұмыртқа салу", "Сүт қою"), "Жұмыртқа салу")
+                Pair(
+                    listOf("Қамырды ашыту", "Май салу", "Жұмыртқа салу", "Сүт қою"),
+                    "Жұмыртқа салу"
+                )
             ), Pair(
                 "Бауырсақтың іші шикі болса, оның мөлшеріне қандай салынады?",
                 Pair(listOf("Қызыл-күрең", "Жай", "Дәмді", "Қызықты"), "Қызыл-күрең")
@@ -289,25 +308,178 @@ class TasksFragment : Fragment() {
         val layoutManager = GridLayoutManager(activity, spanCount)
         recyclerView.layoutManager = layoutManager
         val tasks = listOf(
-            Task("Новые слова (Daily)", R.drawable.dictionary_icon),
-            Task("Новые слова (Daily)", R.drawable.dictionary_icon),
-            Task("Новые слова (Daily)", R.drawable.dictionary_icon),
-            Task("Грамматика (Present Simple)", R.drawable.grammar_icon),
-            Task("Грамматика (Present Simple)", R.drawable.grammar_icon),
-            Task("Грамматика (Present Simple)", R.drawable.grammar_icon),
-            Task("Грамматика (Past Simple)", R.drawable.grammar_icon),
-            Task("Грамматика (Past Simple)", R.drawable.grammar_icon),
-            Task("Грамматика (Past Simple)", R.drawable.grammar_icon),
-            Task("Грамматика (Future Simple)", R.drawable.grammar_icon),
-            Task("Грамматика (Future Simple)", R.drawable.grammar_icon),
-            Task("Грамматика (Future Simple)", R.drawable.grammar_icon),
-            Task("Аудирование(Daily)", R.drawable.audio_icon),
-            Task("Аудирование(Daily)", R.drawable.audio_icon),
-            Task("Аудирование(Daily)", R.drawable.audio_icon),
-            Task("Чтение (Daily)", R.drawable.reading_icon),
-            Task("Чтение (Daily)", R.drawable.reading_icon),
-            Task("Чтение (Daily)", R.drawable.reading_icon),
-            Task("Написание эссе", R.drawable.writting_icon)
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "New words (Daily)"
+                    getString(
+                        R.string.russian
+                    ) -> "Новые слова (Daily)"
+                    else -> "Жаңа сөздер (Daily)"
+                },
+                R.drawable.dictionary_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "New words (Daily)"
+                    getString(
+                        R.string.russian
+                    ) -> "Новые слова (Daily)"
+                    else -> "Жаңа сөздер (Daily)"
+                },
+                R.drawable.dictionary_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "New words (Daily)"
+                    getString(
+                        R.string.russian
+                    ) -> "Новые слова (Daily)"
+                    else -> "Жаңа сөздер (Daily)"
+                },
+                R.drawable.dictionary_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Grammar (Present Simple)"
+                    getString(
+                        R.string.russian
+                    ) -> "Грамматика (Настоящее время)"
+                    else -> "Грамматика (Осы шақ)"
+                },
+                R.drawable.grammar_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Grammar (Present Simple)"
+                    getString(
+                        R.string.russian
+                    ) -> "Грамматика (Настоящее время)"
+                    else -> "Грамматика (Осы шақ)"
+                },
+                R.drawable.grammar_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Grammar (Present Simple)"
+                    getString(
+                        R.string.russian
+                    ) -> "Грамматика (Настоящее время)"
+                    else -> "Грамматика (Осы шақ)"
+                },
+                R.drawable.grammar_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Grammar (Past Simple)"
+                    getString(
+                        R.string.russian
+                    ) -> "Грамматика (Прошедшее время)"
+                    else -> "Грамматика (Өткен шақ)"
+                },
+                R.drawable.grammar_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Grammar (Past Simple)"
+                    getString(
+                        R.string.russian
+                    ) -> "Грамматика (Прошедшее время)"
+                    else -> "Грамматика (Өткен шақ)"
+                },
+                R.drawable.grammar_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Grammar (Past Simple)"
+                    getString(
+                        R.string.russian
+                    ) -> "Грамматика (Прошедшее время)"
+                    else -> "Грамматика (Өткен шақ)"
+                },
+                R.drawable.grammar_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Grammar (Future Simple)"
+                    getString(
+                        R.string.russian
+                    ) -> "Грамматика (Будущее время)"
+                    else -> "Грамматика (Келер шақ)"
+                },
+                R.drawable.grammar_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Grammar (Future Simple)"
+                    getString(
+                        R.string.russian
+                    ) -> "Грамматика (Будущее время)"
+                    else -> "Грамматика (Келер шақ)"
+                },
+                R.drawable.grammar_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Grammar (Future Simple)"
+                    getString(
+                        R.string.russian
+                    ) -> "Грамматика (Будущее время)"
+                    else -> "Грамматика (Келер шақ)"
+                },
+                R.drawable.grammar_icon
+            ),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Listening (Daily)"
+                    getString(
+                        R.string.russian
+                    ) -> "Аудирование (Daily)"
+                    else -> "Тындалым (Daily)"
+                }, R.drawable.audio_icon),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Listening (Daily)"
+                    getString(
+                        R.string.russian
+                    ) -> "Аудирование (Daily)"
+                    else -> "Тындалым (Daily)"
+                }, R.drawable.audio_icon),
+            Task(
+                when (language) {
+                    getString(R.string.english) -> "Listening (Daily)"
+                    getString(
+                        R.string.russian
+                    ) -> "Аудирование (Daily)"
+                    else -> "Тындалым (Daily)"
+                }, R.drawable.audio_icon),
+            Task(when (language) {
+                getString(R.string.english) -> "Reading (Daily)"
+                getString(
+                    R.string.russian
+                ) -> "Чтение (Daily)"
+                else -> "Оқылым (Daily)"
+            }, R.drawable.reading_icon),
+            Task(when (language) {
+                getString(R.string.english) -> "Reading (Daily)"
+                getString(
+                    R.string.russian
+                ) -> "Чтение (Daily)"
+                else -> "Оқылым (Daily)"
+            }, R.drawable.reading_icon),
+            Task(when (language) {
+                getString(R.string.english) -> "Reading (Daily)"
+                getString(
+                    R.string.russian
+                ) -> "Чтение (Daily)"
+                else -> "Оқылым (Daily)"
+            }, R.drawable.reading_icon),
+            Task(when (language) {
+                getString(R.string.english) -> "Writing essay (Daily)"
+                getString(
+                    R.string.russian
+                ) -> "Написание эссе (demo)"
+                else -> "Эссе жазу (demo)"
+            }, R.drawable.writting_icon)
         )
 
         adapter = TasksAdapter(tasks, requireContext())
@@ -316,12 +488,27 @@ class TasksFragment : Fragment() {
             val i = Intent(requireContext(), TaskActivity::class.java)
             val complexTask = ComplexTaskData(
                 listOf(1, 3, 4, 6, 2, 5),
-                if (language == getString(R.string.english)) audioTaskData1 else if (language == getString(R.string.russian)) audioTaskData2ru else audioTaskData1kz,
+                if (language == getString(R.string.english)) audioTaskData1 else if (language == getString(
+                        R.string.russian
+                    )
+                ) audioTaskData2ru else audioTaskData1kz,
                 if (language == getString(R.string.kazak_language)) wordsList1kz else wordsList1,
-                if (language == getString(R.string.english)) grammarTaskDataPresent1 else if (language == getString(R.string.russian))grammarTaskDataPresent1ru else grammarTaskDataPresent1kz,
-                if (language == getString(R.string.english)) theoryTaskPresent else if (language == getString(R.string.russian)) theoryTaskPresentru else theoryTaskPresentkz,
-                if (language == getString(R.string.english)) textTask1 else if (language == getString(R.string.russian)) textTask1ru else textTask1kz,
-                if (language == getString(R.string.english)) writingTask1 else if (language == getString(R.string.russian)) writingTask2ru else writingTask1kz
+                if (language == getString(R.string.english)) grammarTaskDataPresent1 else if (language == getString(
+                        R.string.russian
+                    )
+                ) grammarTaskDataPresent1ru else grammarTaskDataPresent1kz,
+                if (language == getString(R.string.english)) theoryTaskPresent else if (language == getString(
+                        R.string.russian
+                    )
+                ) theoryTaskPresentru else theoryTaskPresentkz,
+                if (language == getString(R.string.english)) textTask1 else if (language == getString(
+                        R.string.russian
+                    )
+                ) textTask1ru else textTask1kz,
+                if (language == getString(R.string.english)) writingTask1 else if (language == getString(
+                        R.string.russian
+                    )
+                ) writingTask2ru else writingTask1kz
             )
             i.putExtra("complex_task_data", complexTask)
             startActivity(i)

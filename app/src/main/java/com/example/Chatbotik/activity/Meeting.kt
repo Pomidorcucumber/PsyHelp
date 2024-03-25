@@ -307,8 +307,10 @@ class Meeting : AppCompatActivity() {
                             startAutoTypeText()
                             val usaDrawable1: Drawable? =
                                 ContextCompat.getDrawable(this@Meeting, R.drawable.usa)
+                            val usaDrawable3: Drawable? =
+                                ContextCompat.getDrawable(this@Meeting, R.drawable.kazakstan)
                             binding.option1.setCompoundDrawablesWithIntrinsicBounds(
-                                usaDrawable1,
+                                usaDrawable3,
                                 null,
                                 null,
                                 null
@@ -321,10 +323,8 @@ class Meeting : AppCompatActivity() {
                                 null,
                                 null
                             )
-                            val usaDrawable3: Drawable? =
-                                ContextCompat.getDrawable(this@Meeting, R.drawable.kazakstan)
                             binding.option3.setCompoundDrawablesWithIntrinsicBounds(
-                                usaDrawable3,
+                                usaDrawable1,
                                 null,
                                 null,
                                 null
